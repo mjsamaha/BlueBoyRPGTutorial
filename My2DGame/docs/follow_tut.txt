@@ -1,0 +1,47 @@
+current - #24
+
+next
+- #25 - Character Status
+- #26 - Scrolling Message, Leveling Up, Damage Calculation
+- # - Useful Functions
+- #27 - Inventory
+
+- #28 - Equip & Use Items
+- #29 - Projectiles
+- #30 - Monster Projectiles & Mana
+- #31 - Item Drops
+
+- #32 - Breaking Objects
+- #33 - Particles
+- #34 - Full Screen Mode
+- #35 - Options Menu
+
+- #36 - Saving Config to a Text File
+- #37 - Game Over
+- #38 - Transition Between Maps
+- #39 - Trade System
+
+- 40 - Pathfinding(NPC Follows, Aggro Monsters)
+- 41 - Knockback
+- 42 - Object Detection/Loot
+- 43 - Stackable Items
+
+- 44 - Lighting Effect
+- 45 - Lantern
+- 46 - Day & Night Cycle
+- 47 - Map Screen and Minimap
+
+- 48 - Advanced Combat
+- 49 - Guard and Parry
+- 50 - Save and Load
+- 51 - updates
+
+- 52 - Enter Dungeon
+- 53 - Dungeon Puzzle/Gimmick
+- 54 - Boss Fight
+- 55 - Boss Health Bar
+
+- 56 - Cutscene
+- 57 - Ending
+
+Water Trans

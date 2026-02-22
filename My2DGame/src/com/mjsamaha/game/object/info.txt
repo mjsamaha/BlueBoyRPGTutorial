@@ -1,0 +1,7 @@
+next time call classes:
+
+Object - parent class for all objects in the game
+Boots
+Chest
+Door
+Key

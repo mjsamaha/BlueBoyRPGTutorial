@@ -1,0 +1,65 @@
+2D RPG Sandbox Game
+Name: still undecided
+
+
+
+inspiration: Minicraft + Minecraft + Stardew Valley
+
+My Own Game is a 2D sandbox game that combines elements of Minicraft, Minecraft, and Stardew Valley. 
+Players can explore a procedurally generated world, gather resources, build structures, and interact with NPCs. (animals, mobs)
+The game features a day-night cycle, weather system, and various biomes to discover. Players can also engage in farming, fishing, and combat with monsters. 
+
+The goal is to survive and thrive in the world while uncovering its secrets and building a thriving community.
+
+
+Core Mechanics/Features:
+- Procedurally generated world with different biomes
+- Resource gathering and crafting system
+- Building and construction mechanics
+- Farming and fishing activities + animal husbandry
+- Combat system with various weapons and monsters
+- Day-night cycle and weather system
+- Exploration and discovery (hidden areas, dungeons, etc.)
+- Tree/Bush Interactions (chopping trees for wood, hitting berries for fruits)
+- Farming (planting seeds, watering crops, harvesting)
+- Crafting tools (wood for basic tools, ores for advanced tools, etc.)
+- Fishing (using a fishing rod to catch fish in water bodies, different fish types based on location and time of day)
+- Mining (digging for ores and gems = upgrade tools, crafting, etc.)
+- NPC interactions (animals = kill for food, mobs = kill for xp, drops)
+- Inventory management and character progression (leveling up, skill tree, etc.)
+
+
+
+
+
+
+
+
+-- | ==================================================================== | --
+
+Core Stack - First Prototype:
+- Programming Language: Java
+- Library: Swing for everything (graphics, input, etc.)
+- Asset Creation: Aseprite for pixel art, Bfxr for sound effects
+- Music: Bosca Ceoil for chiptune music or LMMS 
+Others: Cakewalk, Tracktion, Reaper, Waveform
+- Fonts: Pixel fonts from dafont.com or 1001fonts.com
+- Version Control: Git with GitHub for code hosting and collaboration
+- Game Loop: Delta Time Game Loop (using System.nanoTime() for timing)
+
+- Releasing/Distribution: itch.io via .jar file
+
+
+
+Core Stack - Future:
+- Programming Language: Java
+- Library: LibGDX for graphics, input, and other game-related functionalities
+- Asset Creation: Aseprite for pixel art, Bfxr for sound effects
+- Music: Bosca Ceoil for chiptune music or LMMS
+Others: Cakewalk, Tracktion, Reaper, Waveform
+- Fonts: Pixel fonts from dafont.com or 1001fonts.com
+- Version Control: Git with GitHub for code hosting and collaboration
+
+- Releasing/Distribution: LibGDX allows for cross-platform deployment, 
+so the game can be released on multiple platforms such as Windows, macOS, Linux, and even mobile devices. 
+The game can be distributed through platforms like itch.io

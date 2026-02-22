@@ -1,0 +1,167 @@
+{
+  "tileSize": 16,
+  "atlasWidth": 128,
+  "atlasHeight": 128,
+  "regions": [
+    {
+      "id": "grass00",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "grass01",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "id": "water00",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "id": "water01",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "id": "water02",
+      "row": 0,
+      "col": 4
+    },
+    {
+      "id": "water03",
+      "row": 0,
+      "col": 5
+    },
+    {
+      "id": "water04",
+      "row": 0,
+      "col": 6
+    },
+    {
+      "id": "water05",
+      "row": 0,
+      "col": 7
+    },
+    {
+      "id": "water06",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "water07",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "id": "water08",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "id": "water09",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "id": "water10",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "id": "water11",
+      "row": 1,
+      "col": 5
+    },
+    {
+      "id": "water12",
+      "row": 1,
+      "col": 6
+    },
+    {
+      "id": "water13",
+      "row": 1,
+      "col": 7
+    },
+    {
+      "id": "road00",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "id": "road01",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "id": "road02",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "id": "road03",
+      "row": 2,
+      "col": 3
+    },
+    {
+      "id": "road04",
+      "row": 2,
+      "col": 4
+    },
+    {
+      "id": "road05",
+      "row": 2,
+      "col": 5
+    },
+    {
+      "id": "road06",
+      "row": 2,
+      "col": 6
+    },
+    {
+      "id": "road07",
+      "row": 2,
+      "col": 7
+    },
+    {
+      "id": "road08",
+      "row": 3,
+      "col": 0
+    },
+    {
+      "id": "road09",
+      "row": 3,
+      "col": 1
+    },
+    {
+      "id": "road10",
+      "row": 3,
+      "col": 2
+    },
+    {
+      "id": "road11",
+      "row": 3,
+      "col": 3
+    },
+    {
+      "id": "road12",
+      "row": 3,
+      "col": 4
+    },
+    {
+      "id": "earth",
+      "row": 3,
+      "col": 5
+    },
+    {
+      "id": "wall",
+      "row": 3,
+      "col": 6
+    },
+    {
+      "id": "tree",
+      "row": 3,
+      "col": 7
+    }
+  ]
+}
