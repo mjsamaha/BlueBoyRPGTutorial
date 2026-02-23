@@ -1,4 +1,4 @@
-package com.mjsamaha.game.entity;
+package com.mjsamaha.game.entity.common;
 
 import java.awt.Graphics2D;
 

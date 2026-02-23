@@ -1,7 +1,7 @@
 package com.mjsamaha.game.managers;
 
 import com.mjsamaha.game.GamePanel;
-import com.mjsamaha.game.entity.Entity;
+import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.tile.TileDefinition;
 import com.mjsamaha.game.tile.TileRegistry;
 

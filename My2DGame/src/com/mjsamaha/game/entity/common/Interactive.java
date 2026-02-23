@@ -1,4 +1,4 @@
-package com.mjsamaha.game.entity;
+package com.mjsamaha.game.entity.common;
 
 public interface Interactive {
     

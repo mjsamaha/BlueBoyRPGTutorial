@@ -1,6 +1,6 @@
 package com.mjsamaha.game.managers;
 
-import com.mjsamaha.game.entity.Entity;
+import com.mjsamaha.game.entity.common.Entity;
 
 public class CollisionData {
     /** Whether the proposed movement collides with something. */

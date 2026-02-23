@@ -8,6 +8,8 @@ import java.awt.image.BufferedImage;
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.audio.SoundEvent;
+import com.mjsamaha.game.entity.common.AnimationController;
+import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.managers.KeyHandler;
 import com.mjsamaha.game.object.HeartObject;
 import com.mjsamaha.game.object.common.Collectible;

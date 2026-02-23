@@ -6,8 +6,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import com.mjsamaha.game.Constants;
-import com.mjsamaha.game.entity.Entity;
 import com.mjsamaha.game.entity.Player;
+import com.mjsamaha.game.entity.common.Entity;
 
 public class EntityManager {
 	

@@ -1,7 +1,7 @@
 package com.mjsamaha.game.object.common;
 
 import com.mjsamaha.game.GamePanel;
-import com.mjsamaha.game.entity.Entity;
+import com.mjsamaha.game.entity.common.Entity;
 
 public abstract class GameObject extends Entity {
 

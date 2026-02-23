@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
+import com.mjsamaha.game.entity.common.Entity;
 
 public class GreenSlime extends Entity {
 	

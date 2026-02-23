@@ -4,6 +4,8 @@ import java.util.Random;
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
+import com.mjsamaha.game.entity.common.Entity;
+import com.mjsamaha.game.entity.common.Interactive;
 
 public class OldMan extends Entity implements Interactive {
 	
