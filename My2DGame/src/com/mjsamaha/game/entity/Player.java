@@ -27,6 +27,8 @@ public class Player extends Entity {
 	// Attack animation controller (separate from normal animation)
 	private AnimationController attackAnimController;
 	
+	public boolean attackCancelled = false; // Flag to allow attack cancellation
+	
 	public Player(GamePanel gp, KeyHandler keyH) {
 		super(gp);
 		this.keyH = keyH;
@@ -108,6 +110,12 @@ public class Player extends Entity {
 	
 	@Override
 	public void update() {
+	    // Handle attack input
+	    if (keyH.confirmPressed && !attacking) {
+	        attacking = true;
+	        attackCancelled = false;
+	        gp.playSE(SoundEvent.SFX_SWORD_SWING); // Optional: add swing sound
+	    }
 
 	    if (attacking) {
 	        attack();
@@ -236,6 +244,10 @@ public class Player extends Entity {
 				pickupObject(objIndex);
 			}
 		}
+		
+		
+		
+		
 	}
 	
 	/**
@@ -333,16 +345,14 @@ public class Player extends Entity {
 	private void interactNPC(int i) {
 	    if (gp.keyH.confirmPressed) {
 	        if (i != 999) {
+	            attackCancelled = true; // Cancel attack if NPC nearby
+	            attacking = false; // Stop any ongoing attack
 	            gp.gameState = gp.dialogueState;
 	            gp.npc[i].speak();
 	            gp.ui.getState().currentDialogue = gp.npc[i].getDialogue();
 	            gp.ui.getState().dialogueActive = true;
-	            gp.keyH.confirmPressed = false;
-	        } else {
-	        	// play swing sound effect
-	        	gp.playSE(SoundEvent.SFX_SWORD_SWING);
-	            attacking = true;
 	        }
+	        gp.keyH.confirmPressed = false; // Consume the input
 	    }
 	}
 	

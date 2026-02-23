@@ -5,11 +5,11 @@ import java.util.Random;
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
 
-public class MON_GreenSlime extends Entity {
+public class GreenSlime extends Entity {
 	
 	private Random random;
 	
-	public MON_GreenSlime(GamePanel gp) {
+	public GreenSlime(GamePanel gp) {
 		super(gp);
 		
 		this.name = "Green Slime";

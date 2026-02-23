@@ -5,11 +5,11 @@ import java.util.Random;
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
 
-public class NPC_Oldman extends Entity implements Interactive {
+public class OldMan extends Entity implements Interactive {
 	
 	private Random random;
 	
-	public NPC_Oldman(GamePanel gp) {
+	public OldMan(GamePanel gp) {
 		super(gp);
 		
 		this.type = 1; // NPC type
