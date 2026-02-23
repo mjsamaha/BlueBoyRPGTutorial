@@ -1,10 +1,12 @@
-package com.mjsamaha.game.ui;
+package com.mjsamaha.game.ui.screen;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.managers.KeyHandler;
+import com.mjsamaha.game.ui.FontManager;
+import com.mjsamaha.game.ui.UIUtils;
 
 public class PauseScreen {
 	

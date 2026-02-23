@@ -1,8 +1,14 @@
 package com.mjsamaha.game.ui;
 
 import java.awt.Graphics2D;
+import java.util.ArrayList;
 
 import com.mjsamaha.game.GamePanel;
+import com.mjsamaha.game.ui.overlay.DialogueBox;
+import com.mjsamaha.game.ui.overlay.HUD;
+import com.mjsamaha.game.ui.screen.CharacterScreen;
+import com.mjsamaha.game.ui.screen.MenuScreen;
+import com.mjsamaha.game.ui.screen.PauseScreen;
 
 
 
@@ -14,6 +20,8 @@ import com.mjsamaha.game.GamePanel;
 public class UserInterface {
     private final GamePanel gp;
     private final UIState state = new UIState();
+    
+    private final FontManager fm = FontManager.getInstance();
 
     private MenuScreen menuScreen; // no constructor call here
     private PauseScreen pauseScreen; // can be added later if needed
@@ -22,6 +30,9 @@ public class UserInterface {
     private final HUD hud;
     private final DialogueBox dialogueBox;
     public String currentDialogue;
+    
+    public ArrayList<String> msg = new ArrayList<>();
+    public ArrayList<Integer> msgCounter = new ArrayList<>();
 
 
     public UserInterface(GamePanel gp) {
@@ -46,6 +57,18 @@ public class UserInterface {
     }
 
     public UIState getState() { return state; }
+    
+    public void addMessage(String text) {
+    	msg.add(text);
+    	msgCounter.add(0);
+    }
+    
+    public void drawMessage(Graphics2D g2) {
+		int messageX = gp.tileSize;
+		int messageY = gp.tileSize * 4;
+		g2.setFont(fm.getSmallBold());
+		
+	}
 
     public void draw(Graphics2D g2) {
         if (gp.gameState == gp.menuState) {
@@ -59,6 +82,7 @@ public class UserInterface {
         } else {
             // play + dialogue states
             hud.draw(g2);
+            drawMessage(g2);
             if (gp.gameState == gp.dialogueState || state.dialogueActive)
                 dialogueBox.draw(g2);
             if (state.messageOn)

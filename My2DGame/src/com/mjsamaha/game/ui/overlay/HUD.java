@@ -1,9 +1,11 @@
-package com.mjsamaha.game.ui;
+package com.mjsamaha.game.ui.overlay;
 
 import java.awt.Graphics2D;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.object.HeartObject;
+import com.mjsamaha.game.ui.FontManager;
+import com.mjsamaha.game.ui.UIState;
 
 /**
  * Heads-up display renderer. Keeps drawing logic for player HUD and debug info.

@@ -10,6 +10,7 @@ public class FontManager {
     private static FontManager instance;
 
     private Font minecraft20;
+    private Font minecraft20B;
     private Font minecraft30;
     private Font minecraft50;
     private Font minecraft80B;
@@ -31,6 +32,7 @@ public class FontManager {
                 ge.registerFont(base);
 
                 minecraft20 = base.deriveFont(Font.PLAIN, 20f);
+                minecraft20B = base.deriveFont(Font.BOLD, 20f);
                 minecraft30 = base.deriveFont(Font.PLAIN, 30f);
                 minecraft50 = base.deriveFont(Font.PLAIN, 50f);
                 minecraft80B = base.deriveFont(Font.BOLD, 80f);
@@ -42,12 +44,14 @@ public class FontManager {
 
         // fallback fonts
         minecraft20 = new Font("Arial", Font.PLAIN, 20);
+        minecraft20B = new Font("Arial", Font.BOLD, 20);
         minecraft30 = new Font("Arial", Font.PLAIN, 30);
         minecraft50 = new Font("Arial", Font.PLAIN, 50);
         minecraft80B = new Font("Arial", Font.BOLD, 80);
     }
 
     public Font getSmall() { return minecraft20; }
+    public Font getSmallBold() { return minecraft20B; }
     public Font getMedium() { return minecraft30; }
     public Font getLarge() { return minecraft50; }
     public Font getTitle() { return minecraft80B; }

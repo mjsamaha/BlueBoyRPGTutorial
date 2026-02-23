@@ -1,9 +1,12 @@
-package com.mjsamaha.game.ui;
+package com.mjsamaha.game.ui.overlay;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 
 import com.mjsamaha.game.GamePanel;
+import com.mjsamaha.game.ui.FontManager;
+import com.mjsamaha.game.ui.UIState;
+import com.mjsamaha.game.ui.UIUtils;
 
 public class DialogueBox {
     private final GamePanel gp;

@@ -19,6 +19,8 @@ public class GreenSlime extends Entity {
 		this.maxHealth = Constants.Monster.SLIME_MAX_HEALTH;
 		this.health = maxHealth;
 		this.random = new Random();
+		this.attack = 3;
+		this.defense = 0;
 		
 		// Set collision box using constants
 		solidArea.x = Constants.Monster.SLIME_COLLISION_X;

@@ -161,17 +161,7 @@ public class Player extends Entity {
 	    int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
 	    interactNPC(npcIndex);
 
-	    // Unified monster collision (movement + damage)
-	    int monsterIndex = gp.cChecker.checkEntity(this, gp.monster);
-
-	    if (monsterIndex != 999 && !invincible) {
-	        health -= Constants.Monster.SLIME_DAMAGE;
-	        
-	        // Play damage sound
-	        gp.playSE(SoundEvent.SFX_RECEIVE_DAMAGE);
-	        
-	        invincible = true;
-	    }
+	    
 
 	    updateInvincibility();
 	}
@@ -287,56 +277,59 @@ public class Player extends Entity {
 	 * Handles attack animation and damage detection
 	 */
 	private void attack() {
-		attackAnimController.setSpriteCounter(attackAnimController.getSpriteCounter() + 1);
-		
-		if (attackAnimController.getSpriteCounter() <= 5) {
-			attackAnimController.setSpriteNum(1);
-		}
-		if (attackAnimController.getSpriteCounter() > 5 && attackAnimController.getSpriteCounter() <= 25) {
-			attackAnimController.setSpriteNum(2);
-			
-			// Save current position and size
-			int currentWorldX = worldX;
-			int currentWorldY = worldY;
-			int solidAreaWidth = solidArea.width;
-			int solidAreaHeight = solidArea.height;
-			
-			// Extend hitbox in attack direction
-			switch(direction) {
-				case "up":
-					worldY -= attackArea.height;
-					break;
-				case "down":
-					worldY += attackArea.height;
-					break;
-				case "left":
-					worldX -= attackArea.width;
-					break;
-				case "right":
-					worldX += attackArea.width;
-					break;
-			}
-			
-			solidArea.width = attackArea.width;
-			solidArea.height = attackArea.height;
-			
-			// Check for monster hit
-			int monsterIndex = gp.cChecker.checkEntity(this, gp.monster);
-			
-			// Restore position and size
-			worldX = currentWorldX;
-			worldY = currentWorldY;
-			solidArea.width = solidAreaWidth;
-			solidArea.height = solidAreaHeight;
-			
-			damageMonster(monsterIndex);
-		}
-		
-		if (attackAnimController.getSpriteCounter() > 25) {
-			attackAnimController.reset();
-			attacking = false;
-		}
+	    attackAnimController.setSpriteCounter(attackAnimController.getSpriteCounter() + 1);
+	    
+	    if (attackAnimController.getSpriteCounter() <= 5) {
+	        attackAnimController.setSpriteNum(1);
+	    }
+	    if (attackAnimController.getSpriteCounter() > 5 && attackAnimController.getSpriteCounter() <= 25) {
+	        attackAnimController.setSpriteNum(2);
+	        
+	        // Save current position and size
+	        int currentWorldX = worldX;
+	        int currentWorldY = worldY;
+	        int solidAreaWidth = solidArea.width;
+	        int solidAreaHeight = solidArea.height;
+	        
+	        // Extend hitbox in attack direction
+	        switch(direction) {
+	            case "up":
+	                worldY -= attackArea.height;
+	                break;
+	            case "down":
+	                worldY += attackArea.height;
+	                break;
+	            case "left":
+	                worldX -= attackArea.width;
+	                break;
+	            case "right":
+	                worldX += attackArea.width;
+	                break;
+	        }
+	        
+	        solidArea.width = attackArea.width;
+	        solidArea.height = attackArea.height;
+	        
+	        // Check for monster hit
+	        int monsterIndex = gp.cChecker.checkEntity(this, gp.monster);
+	        
+	        // Restore position and size
+	        worldX = currentWorldX;
+	        worldY = currentWorldY;
+	        solidArea.width = solidAreaWidth;
+	        solidArea.height = solidAreaHeight;
+	        
+	        damageMonster(monsterIndex);
+	        // contactMonster(monsterIndex);
+	    }
+	    
+	    if (attackAnimController.getSpriteCounter() > 25) {
+	        attackAnimController.reset();
+	        attacking = false;
+	    }
 	}
+	
+	
 	
 	/**
 	 * Applies damage to a monster
@@ -344,15 +337,26 @@ public class Player extends Entity {
 	private void damageMonster(int i) {
 		if (i != 999) {
 			if (gp.monster[i].invincible == false) {
-				gp.monster[i].health -= 1;
-				gp.monster[i].invincible = true;
-				gp.monster[i].damageReaction();
 				
 				// Play hit sound
 				gp.playSE(SoundEvent.SFX_HIT_MONSTER);
+				
+				int damage = attack - gp.monster[i].defense;
+				if (damage < 0) {
+					damage = 0;
+				}
+				
+				gp.monster[i].health -= damage;
+				
+				gp.ui.addMessage(damage + " damage!");
+				
+				gp.monster[i].invincible = true;
+				gp.monster[i].damageReaction();
+				
 			}
 			if (gp.monster[i].health <= 0) {
 				gp.monster[i].dying = true;
+				gp.ui.addMessage("Killed the " + gp.monster[i].name + "!");
 			}
 		}
 	}

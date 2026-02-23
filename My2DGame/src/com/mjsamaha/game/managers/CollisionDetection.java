@@ -176,10 +176,21 @@ public class CollisionDetection {
 
 
     public boolean checkPlayer(Entity entity) {
+        
+        // Calculate future position based on entity's direction and speed
+        int futureX = entity.worldX;
+        int futureY = entity.worldY;
+        
+        switch (entity.direction) {
+            case "up": futureY -= entity.speed; break;
+            case "down": futureY += entity.speed; break;
+            case "left": futureX -= entity.speed; break;
+            case "right": futureX += entity.speed; break;
+        }
 
-        int entityLeft   = entity.worldX + entity.solidAreaDefaultX;
+        int entityLeft   = futureX + entity.solidAreaDefaultX;
         int entityRight  = entityLeft + entity.solidArea.width;
-        int entityTop    = entity.worldY + entity.solidAreaDefaultY;
+        int entityTop    = futureY + entity.solidAreaDefaultY;
         int entityBottom = entityTop + entity.solidArea.height;
 
         int playerLeft   = gp.player.worldX + gp.player.solidAreaDefaultX;
@@ -188,10 +199,10 @@ public class CollisionDetection {
         int playerBottom = playerTop + gp.player.solidArea.height;
 
         return (
-                entityRight  > playerLeft &&
-                entityLeft   < playerRight &&
-                entityBottom > playerTop &&
-                entityTop    < playerBottom
+            entityRight  > playerLeft &&
+            entityLeft   < playerRight &&
+            entityBottom > playerTop &&
+            entityTop    < playerBottom
         );
     }
 }

@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
+import com.mjsamaha.game.audio.SoundEvent;
 import com.mjsamaha.game.util.UtilityTools;
 
 public class Entity implements Movable, Collidable, Drawable {
@@ -202,10 +203,18 @@ public class Entity implements Movable, Collidable, Drawable {
 
 		// Monster collision with player
 		if (this.type == 2 && contactPlayer == true) {
-			if (gp.player.invincible == false) {
-				gp.player.health -= 1;
-				gp.player.invincible = true;
-			}
+		    // Don't damage player if they're currently attacking
+		    if (gp.player.invincible == false && gp.player.attacking == false) {
+		        gp.playSE(SoundEvent.SFX_RECEIVE_DAMAGE); // Changed from SFX_HIT_MONSTER
+		        
+		        int damage = attack - gp.player.defense;
+		        if (damage < 0) {
+		            damage = 0;
+		        }
+		        gp.player.health -= damage;
+
+		        gp.player.invincible = true;
+		    }
 		}
 
 		// Apply movement
