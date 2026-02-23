@@ -17,6 +17,7 @@ public class UserInterface {
 
     private MenuScreen menuScreen; // no constructor call here
     private PauseScreen pauseScreen; // can be added later if needed
+    private CharacterScreen characterScreen; // ADD THIS
 
     private final HUD hud;
     private final DialogueBox dialogueBox;
@@ -29,6 +30,7 @@ public class UserInterface {
 
         menuScreen = new MenuScreen(gp, state); // correct constructor
         pauseScreen = new PauseScreen(gp); // can be added later if needed
+        characterScreen = new CharacterScreen(gp, state); // ADD THIS
         hud = new HUD(gp, state);
         dialogueBox = new DialogueBox(gp, state);
     }
@@ -38,23 +40,29 @@ public class UserInterface {
     }
     
     public PauseScreen getPauseScreen() { return pauseScreen; }
+    
+    public CharacterScreen getCharacterScreen() {
+        return characterScreen; 
+    }
 
     public UIState getState() { return state; }
 
     public void draw(Graphics2D g2) {
-    	if (gp.gameState == gp.menuState) {
-    	    menuScreen.draw(g2);
-    	     
-    	} else if (gp.gameState == gp.pauseState) {
-    	    pauseScreen.draw(g2);
-    	    
-    	} else {
-    	    // play + dialogue states
-    	    hud.draw(g2);
-    	    if (gp.gameState == gp.dialogueState || state.dialogueActive)
-    	        dialogueBox.draw(g2);
-    	    if (state.messageOn)
-    	        dialogueBox.draw(g2);
-    	}
+        if (gp.gameState == gp.menuState) {
+            menuScreen.draw(g2);
+        } else if (gp.gameState == gp.pauseState) {
+            pauseScreen.draw(g2);
+        } else if (gp.gameState == gp.characterState) { // ADD THIS
+            // Draw game world first, then overlay
+            hud.draw(g2);
+            characterScreen.draw(g2);
+        } else {
+            // play + dialogue states
+            hud.draw(g2);
+            if (gp.gameState == gp.dialogueState || state.dialogueActive)
+                dialogueBox.draw(g2);
+            if (state.messageOn)
+                dialogueBox.draw(g2);
+        }
     }
 }

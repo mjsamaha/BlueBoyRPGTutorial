@@ -67,6 +67,7 @@ public class GamePanel extends JPanel implements Runnable {
 	public final int playState = Constants.GameState.PLAY;
 	public final int pauseState = Constants.GameState.PAUSE;
 	public final int dialogueState = Constants.GameState.DIALOGUE;
+	public final int characterState = Constants.GameState.CHARACTER_STATE;
 
 	/**
 	 * Constructor - initializes the game panel
@@ -181,14 +182,14 @@ public class GamePanel extends JPanel implements Runnable {
 
 			// Update monsters
 			for (int i = 0; i < monster.length; i++) {
-			    if (monster[i] != null) {
-			        if (monster[i].alive && !monster[i].dying) {
-			            monster[i].update();
-			        }
-			        if (!monster[i].alive) {
-			            monster[i] = null;
-			        }
-			    }
+				if (monster[i] != null) {
+					if (monster[i].alive && !monster[i].dying) {
+						monster[i].update();
+					}
+					if (!monster[i].alive) {
+						monster[i] = null;
+					}
+				}
 			}
 
 			// Check for world events
@@ -202,14 +203,14 @@ public class GamePanel extends JPanel implements Runnable {
 		}
 
 		case pauseState -> {
-		    // Let pause screen handle input
-		    ui.getPauseScreen().update(keyH);
+			// Let pause screen handle input
+			ui.getPauseScreen().update(keyH);
 
-		    // Toggle back with ESC
-		    if (keyH.cancelPressed) {
-		        gameState = playState;
-		        keyH.cancelPressed = false;
-		    }
+			// Toggle back with ESC
+			if (keyH.cancelPressed) {
+				gameState = playState;
+				keyH.cancelPressed = false;
+			}
 		}
 
 		case dialogueState -> {
@@ -220,7 +221,16 @@ public class GamePanel extends JPanel implements Runnable {
 				ui.getState().dialogueActive = false; // reset dialogue flag
 			}
 		}
+
+		case characterState -> {
+			if (keyH.characterStatePressed) {
+				gameState = playState; // back to gameplay
+				keyH.characterStatePressed = false;
+				ui.getState().characterScreenActive = false; // reset character screen flag
+			}
 		}
+		}
+
 	}
 
 	/**
@@ -240,37 +250,37 @@ public class GamePanel extends JPanel implements Runnable {
 
 		case menuState -> ui.draw(g2); // Menu handles its own drawing
 
-		case playState, pauseState, dialogueState -> {
-			// Draw tiles
-			tileM.draw(g2);
-
-			// Build entity list for sorting
-			entityList.add(player);
-
-			for (int i = 0; i < npc.length; i++)
-				if (npc[i] != null)
-					entityList.add(npc[i]);
-
-			for (int i = 0; i < obj.length; i++)
-				if (obj[i] != null)
-					entityList.add(obj[i]);
-
-			for (int i = 0; i < monster.length; i++)
-				if (monster[i] != null)
-					entityList.add(monster[i]);
-
-			// Sort entities by Y position
-			entityList.sort((e1, e2) -> Integer.compare(e1.worldY, e2.worldY));
-
-			// Draw all entities
-			for (Entity e : entityList)
-				e.draw(g2);
-
-			// Clear for next frame
-			entityList.clear();
-
-			// Draw UI on top
-			ui.draw(g2);
+		case playState, pauseState, dialogueState, characterState -> {
+		    // Draw tiles
+		    tileM.draw(g2);
+		    
+		    // Build entity list for sorting
+		    entityList.add(player);
+		    
+		    for (int i = 0; i < npc.length; i++)
+		        if (npc[i] != null)
+		            entityList.add(npc[i]);
+		    
+		    for (int i = 0; i < obj.length; i++)
+		        if (obj[i] != null)
+		            entityList.add(obj[i]);
+		    
+		    for (int i = 0; i < monster.length; i++)
+		        if (monster[i] != null)
+		            entityList.add(monster[i]);
+		    
+		    // Sort entities by Y position
+		    entityList.sort((e1, e2) -> Integer.compare(e1.worldY, e2.worldY));
+		    
+		    // Draw all entities
+		    for (Entity e : entityList)
+		        e.draw(g2);
+		    
+		    // Clear for next frame
+		    entityList.clear();
+		    
+		    // Draw UI on top
+		    ui.draw(g2);
 		}
 		}
 

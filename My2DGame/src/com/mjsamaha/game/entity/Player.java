@@ -12,6 +12,8 @@ import com.mjsamaha.game.entity.common.AnimationController;
 import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.managers.KeyHandler;
 import com.mjsamaha.game.object.HeartObject;
+import com.mjsamaha.game.object.ShieldObjectWood;
+import com.mjsamaha.game.object.SwordObjectNormal;
 import com.mjsamaha.game.object.common.Collectible;
 import com.mjsamaha.game.object.common.Usable;
 
@@ -72,6 +74,27 @@ public class Player extends Entity {
 		
 		maxHealth = Constants.Player.MAX_HEALTH;
 		health = maxHealth;
+		
+		
+		level = 1;
+		strength = 1;
+		dexterity = 1;
+		exp = 0;
+		nextLevelExp = 5;
+		coins = 0;
+		currentWeapon = new SwordObjectNormal(gp);
+		currentShield = new ShieldObjectWood(gp);
+		attack = getAttack();
+		defense = getDefense();
+		
+	}
+	
+	public int getAttack() {
+		return attack = strength * currentWeapon.attackValue;
+	}
+	
+	public int getDefense() {
+		return defense = dexterity * currentShield.defenseValue;
 	}
 	
 	/**
@@ -112,6 +135,14 @@ public class Player extends Entity {
 	
 	@Override
 	public void update() {
+	    // Check for character screen toggle (handle this first, before other inputs)
+	    if (keyH.characterStatePressed && !attacking) {
+	        gp.gameState = gp.characterState;
+	        gp.ui.getState().characterScreenActive = true;
+	        keyH.characterStatePressed = false;
+	        return; // Don't process other updates when opening character screen
+	    }
+	    
 	    // Handle attack input
 	    if (keyH.confirmPressed && !attacking) {
 	        attacking = true;

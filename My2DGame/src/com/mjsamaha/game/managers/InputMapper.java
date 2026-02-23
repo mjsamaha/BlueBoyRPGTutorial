@@ -13,6 +13,7 @@ public class InputMapper {
         MOVE_RIGHT,
         CONFIRM,
         CANCEL,
+        CHARACTER_STATE,
         DEBUG
     }
 
@@ -31,7 +32,11 @@ public class InputMapper {
 
         keyMap.put(KeyEvent.VK_ENTER, Action.CONFIRM);
         keyMap.put(KeyEvent.VK_ESCAPE, Action.CANCEL);
+        keyMap.put(KeyEvent.VK_C, Action.CHARACTER_STATE);
+        
         keyMap.put(KeyEvent.VK_F3, Action.DEBUG);
+        
+        
     }
 
     public Action getAction(int keyCode) {

@@ -38,6 +38,10 @@ public class GameStateManager {
 		return currentState == Constants.GameState.PLAY;
 	}
 	
+	public boolean isCharacterState() {
+		return currentState == Constants.GameState.CHARACTER_STATE;
+	}
+	
 	/**
 	 * Check if currently in pause state
 	 */
@@ -64,6 +68,10 @@ public class GameStateManager {
 	 */
 	public void toPlayState() {
 		currentState = Constants.GameState.PLAY;
+	}
+	
+	public void toCharacterState() {
+		currentState = Constants.GameState.CHARACTER_STATE;
 	}
 	
 	/**
