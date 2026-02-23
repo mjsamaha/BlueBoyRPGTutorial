@@ -59,6 +59,15 @@ public class Entity implements Movable, Collidable, Drawable {
 	// Stats
 	public int maxHealth;
 	public int health;
+	public int strength;
+	public int dexterity;
+	public int attack;
+	public int defense;
+	public int exp;
+	public int nextLevelExp;
+	public int coin;
+	public Entity currentWeapon;
+	public Entity currentShield;
 
 	// Metadata
 	public BufferedImage image, image2, image3;

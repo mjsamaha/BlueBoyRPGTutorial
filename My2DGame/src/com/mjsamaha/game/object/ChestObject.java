@@ -2,12 +2,14 @@ package com.mjsamaha.game.object;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.Player;
+import com.mjsamaha.game.object.common.GameObject;
+import com.mjsamaha.game.object.common.Usable;
 
-public class OBJ_Chest extends GameObject implements Usable {
+public class ChestObject extends GameObject implements Usable {
 
     private boolean opened = false;
 
-    public OBJ_Chest(GamePanel gp) {
+    public ChestObject(GamePanel gp) {
         super(gp);
 
         name = "Chest";

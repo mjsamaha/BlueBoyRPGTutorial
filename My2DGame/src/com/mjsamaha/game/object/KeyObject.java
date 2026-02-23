@@ -2,10 +2,12 @@ package com.mjsamaha.game.object;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.Player;
+import com.mjsamaha.game.object.common.Collectible;
+import com.mjsamaha.game.object.common.GameObject;
 
-public class OBJ_Key extends GameObject implements Collectible {
+public class KeyObject extends GameObject implements Collectible {
 
-    public OBJ_Key(GamePanel gp) {
+    public KeyObject(GamePanel gp) {
         super(gp);
 
         name = "Key";

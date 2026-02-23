@@ -1,12 +1,13 @@
 package com.mjsamaha.game.object;
 
-
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.Player;
+import com.mjsamaha.game.object.common.GameObject;
+import com.mjsamaha.game.object.common.Usable;
 
-public class OBJ_Door extends GameObject implements Usable {
+public class DoorObject extends GameObject implements Usable {
 
-    public OBJ_Door(GamePanel gp) {
+    public DoorObject(GamePanel gp) {
         super(gp);
 
         name = "Door";

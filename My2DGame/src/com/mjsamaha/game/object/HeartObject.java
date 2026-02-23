@@ -1,10 +1,11 @@
 package com.mjsamaha.game.object;
 
 import com.mjsamaha.game.GamePanel;
+import com.mjsamaha.game.object.common.GameObject;
 
-public class OBJ_Heart extends GameObject {
+public class HeartObject extends GameObject {
 
-    public OBJ_Heart(GamePanel gp) {
+    public HeartObject(GamePanel gp) {
         super(gp);
 
         name = "Heart";

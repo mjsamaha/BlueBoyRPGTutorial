@@ -2,10 +2,12 @@ package com.mjsamaha.game.object;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.Player;
+import com.mjsamaha.game.object.common.Collectible;
+import com.mjsamaha.game.object.common.GameObject;
 
-public class OBJ_Boots extends GameObject implements Collectible {
+public class BootObject extends GameObject implements Collectible {
 
-    public OBJ_Boots(GamePanel gp) {
+    public BootObject(GamePanel gp) {
         super(gp);
 
         name = "Boots";

@@ -9,9 +9,9 @@ import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.audio.SoundEvent;
 import com.mjsamaha.game.managers.KeyHandler;
-import com.mjsamaha.game.object.Collectible;
-import com.mjsamaha.game.object.OBJ_Heart;
-import com.mjsamaha.game.object.Usable;
+import com.mjsamaha.game.object.HeartObject;
+import com.mjsamaha.game.object.common.Collectible;
+import com.mjsamaha.game.object.common.Usable;
 
 
 public class Player extends Entity {
@@ -20,8 +20,8 @@ public class Player extends Entity {
 	
 	public final int screenX;
 	public final int screenY;
-	public OBJ_Heart life;
-	public OBJ_Heart maxLife;
+	public HeartObject life;
+	public HeartObject maxLife;
 	public int keys = 0;
 	
 	// Attack animation controller (separate from normal animation)

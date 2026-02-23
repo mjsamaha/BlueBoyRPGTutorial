@@ -1,4 +1,4 @@
-package com.mjsamaha.game.object;
+package com.mjsamaha.game.object.common;
 
 import com.mjsamaha.game.entity.Player;
 

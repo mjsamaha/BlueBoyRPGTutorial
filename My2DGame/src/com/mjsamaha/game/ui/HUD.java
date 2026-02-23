@@ -3,7 +3,7 @@ package com.mjsamaha.game.ui;
 import java.awt.Graphics2D;
 
 import com.mjsamaha.game.GamePanel;
-import com.mjsamaha.game.object.OBJ_Heart;
+import com.mjsamaha.game.object.HeartObject;
 
 /**
  * Heads-up display renderer. Keeps drawing logic for player HUD and debug info.
@@ -13,14 +13,14 @@ public class HUD {
     private final UIState state;
     private final FontManager fm = FontManager.getInstance();
 
-    private final OBJ_Heart hearts;
+    private final HeartObject hearts;
 
     public HUD(GamePanel gp, UIState state) {
         this.gp = gp;
         this.state = state;
 
         // Load hearts once
-        hearts = new OBJ_Heart(gp);
+        hearts = new HeartObject(gp);
     }
 
     public void draw(Graphics2D g2) {
