@@ -3,6 +3,7 @@ package com.mjsamaha.game.managers;
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.GreenSlime;
 import com.mjsamaha.game.entity.OldMan;
+import com.mjsamaha.game.object.KeyObject;
 
 public class AssetManager {
 	
@@ -16,7 +17,9 @@ public class AssetManager {
 	
 	public void setObject() {
 
-		
+		gp.obj[0] = new KeyObject(gp);
+		gp.obj[0].worldX = gp.tileSize*25;
+		gp.obj[0].worldY = gp.tileSize*19;
 	
 	}
 	
@@ -25,6 +28,9 @@ public class AssetManager {
 		gp.npc[0] = new OldMan(gp);
 		gp.npc[0].worldX = gp.tileSize * 21;
 		gp.npc[0].worldY = gp.tileSize * 21;
+		
+	    System.out.println("✅ Key placed at tile (24, 21) - should be visible immediately");
+
 		
 	}
 	

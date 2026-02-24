@@ -3,20 +3,19 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
-
-    public boolean upPressed, downPressed, leftPressed, rightPressed;
+	public boolean upPressed, downPressed, leftPressed, rightPressed;
     public boolean confirmPressed, cancelPressed;
     public boolean characterStatePressed;
-    public boolean debugPressed;
-
+    public boolean debugTogglePressed = false;  // ADD THIS
+    public boolean refreshPressed = false;  // ADD THIS
+    
     private final InputMapper inputMapper = new InputMapper();
-
+    
     @Override
     public void keyPressed(KeyEvent e) {
-
         InputMapper.Action action = inputMapper.getAction(e.getKeyCode());
         if (action == null) return;
-
+        
         switch (action) {
             case MOVE_UP -> upPressed = true;
             case MOVE_DOWN -> downPressed = true;
@@ -25,16 +24,16 @@ public class KeyHandler implements KeyListener {
             case CONFIRM -> confirmPressed = true;
             case CANCEL -> cancelPressed = true;
             case CHARACTER_STATE -> characterStatePressed = true;
-            case DEBUG -> debugPressed = true;
+            case DEBUG -> debugTogglePressed = true; 
+            case REFRESH -> refreshPressed = true;
         }
     }
-
+    
     @Override
     public void keyReleased(KeyEvent e) {
-
         InputMapper.Action action = inputMapper.getAction(e.getKeyCode());
         if (action == null) return;
-
+        
         switch (action) {
             case MOVE_UP -> upPressed = false;
             case MOVE_DOWN -> downPressed = false;
@@ -43,10 +42,11 @@ public class KeyHandler implements KeyListener {
             case CONFIRM -> confirmPressed = false;
             case CANCEL -> cancelPressed = false;
             case CHARACTER_STATE -> characterStatePressed = false;
-            case DEBUG -> debugPressed = false;
+            case DEBUG -> debugTogglePressed = false;  
+            case REFRESH -> refreshPressed = false;  
         }
     }
-
+    
     @Override
     public void keyTyped(KeyEvent e) {}
 }

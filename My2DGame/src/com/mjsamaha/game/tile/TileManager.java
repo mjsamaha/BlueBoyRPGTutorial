@@ -11,6 +11,7 @@ public class TileManager {
 
     GamePanel gp;
     public int[][] mapTileNum;
+    private String currentMapPath; 
 
     public TileManager(GamePanel gp) {
         this.gp = gp;
@@ -24,6 +25,7 @@ public class TileManager {
         registerTiles();  // populate TileRegistry
         loadMap("/maps/worldV2.txt");
     }
+    
     
     /*
      * Or you could load it from JSON, e.g.:
@@ -87,25 +89,12 @@ public class TileManager {
         TileRegistry.register(new TileDefinition(40, "wall", true, null));
         TileRegistry.register(new TileDefinition(41, "tree", true, null));
     }
+    
 
-//    private void getTileImages() {
-//        UtilityTools uTool = new UtilityTools();
-//
-//        for (TileDefinition def : TileRegistry.getAll()) {
-//            try {
-//                BufferedImage img = ImageIO.read(getClass().getResourceAsStream("/tiles/" + def.getImageName() + ".png"));
-//                img = uTool.scaledImage(img, gp.tileSize, gp.tileSize);
-//                def.setImage(img);
-//            } catch (Exception e) {
-//                System.err.println("Error loading tile image: " + def.getImageName());
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-
-   
     /** Load tile map from text file */
     public void loadMap(String filePath) {
+        this.currentMapPath = filePath;  // ADD THIS LINE at the very beginning
+        
         try {
             InputStream is = getClass().getResourceAsStream(filePath);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
@@ -154,6 +143,15 @@ public class TileManager {
             System.err.println("Error loading map file: " + filePath);
             e.printStackTrace();
         }
+    }
+    
+    public void reloadMap() {
+    	if (currentMapPath != null) {
+    		System.out.println("🔄 Reloading map from: " + currentMapPath);
+			loadMap(currentMapPath);
+    	} else {
+            System.err.println("❌ No map loaded to reload!");
+    	}
     }
 
     /** Draw visible tiles to screen */

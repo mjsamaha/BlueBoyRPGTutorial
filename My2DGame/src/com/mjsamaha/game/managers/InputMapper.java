@@ -14,7 +14,8 @@ public class InputMapper {
         CONFIRM,
         CANCEL,
         CHARACTER_STATE,
-        DEBUG
+        DEBUG,
+        REFRESH
     }
 
     private final Map<Integer, Action> keyMap = new HashMap<>();
@@ -35,9 +36,11 @@ public class InputMapper {
         keyMap.put(KeyEvent.VK_C, Action.CHARACTER_STATE);
         
         keyMap.put(KeyEvent.VK_F3, Action.DEBUG);
-        
-        
+        keyMap.put(KeyEvent.VK_R, Action.REFRESH);
     }
+
+        
+        
 
     public Action getAction(int keyCode) {
         return keyMap.get(keyCode);

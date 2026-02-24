@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 import com.mjsamaha.game.GamePanel;
+import com.mjsamaha.game.ui.overlay.DebugOverlay;
 import com.mjsamaha.game.ui.overlay.DialogueBox;
 import com.mjsamaha.game.ui.overlay.HUD;
 import com.mjsamaha.game.ui.screen.CharacterScreen;
@@ -27,7 +28,8 @@ public class UserInterface {
     private MenuScreen menuScreen; // no constructor call here
     private PauseScreen pauseScreen; // can be added later if needed
     private CharacterScreen characterScreen; // ADD THIS
-
+    
+    private final DebugOverlay debugOverlay;
     private final HUD hud;
     private final DialogueBox dialogueBox;
     public String currentDialogue;
@@ -45,6 +47,7 @@ public class UserInterface {
         characterScreen = new CharacterScreen(gp, state); // ADD THIS
         hud = new HUD(gp, state);
         dialogueBox = new DialogueBox(gp, state);
+        debugOverlay = new DebugOverlay(gp);
     }
     
     public MenuScreen getMenuScreen() {
@@ -112,6 +115,10 @@ public class UserInterface {
                 dialogueBox.draw(g2);
             if (state.messageOn)
                 dialogueBox.draw(g2);
+        }
+        
+        if (state.showDebug) {
+        	debugOverlay.draw(g2);
         }
     }
 }

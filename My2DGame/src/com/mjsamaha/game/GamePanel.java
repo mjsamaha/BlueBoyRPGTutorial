@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -164,6 +165,20 @@ public class GamePanel extends JPanel implements Runnable {
 	 * Update game logic
 	 */
 	public void update() {
+		
+		// Handle debug toggle (works in any game state)
+	    if (keyH.debugTogglePressed) {
+	        ui.getState().showDebug = !ui.getState().showDebug;
+	        keyH.debugTogglePressed = false;  // Consume the input
+	    }
+	    
+	    // Handle map refresh (works in any game state)
+	    if (keyH.refreshPressed) {
+	        tileM.reloadMap();
+	        ui.addMessage("Map refreshed!");
+	        keyH.refreshPressed = false;  // Consume the input
+	    }
+
 
 		switch (gameState) {
 
