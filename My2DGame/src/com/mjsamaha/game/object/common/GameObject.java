@@ -17,7 +17,6 @@ public abstract class GameObject extends Entity {
     @Override
     public void draw(Graphics2D g2) {
         if (image == null) {
-            System.err.println("Cannot draw " + name + " - image is null!");
             return;
         }
         

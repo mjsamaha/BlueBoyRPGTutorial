@@ -22,7 +22,6 @@ public class ChestObject extends GameObject implements Usable {
         if (!opened) {
             opened = true;
             collision = false;
-            System.out.println("Chest opened!");
         }
     }
 }

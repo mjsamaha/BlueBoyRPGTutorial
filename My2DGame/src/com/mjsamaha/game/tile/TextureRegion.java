@@ -1,6 +1,7 @@
 package com.mjsamaha.game.tile;
 
 import java.awt.image.BufferedImage;
+import java.util.logging.Logger;
 
 /**
  * Represents a rectangular region within a texture atlas.
@@ -11,6 +12,9 @@ import java.awt.image.BufferedImage;
  * are stitched into one large atlas at startup.
  */
 public class TextureRegion {
+	
+    private static final Logger LOGGER = Logger.getLogger(TextureRegion.class.getSimpleName());
+
     
     private final BufferedImage atlas;      // The parent atlas image
     private final int x;                    // X coordinate in atlas (pixels)
@@ -48,6 +52,8 @@ public class TextureRegion {
     public BufferedImage getSubImage() {
         if (cachedSubImage == null) {
             cachedSubImage = atlas.getSubimage(x, y, width, height);
+            LOGGER.fine("Cached subimage: " + this);
+
         }
         return cachedSubImage;
     }

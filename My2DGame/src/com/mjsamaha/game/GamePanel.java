@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.logging.Logger;
 
 import javax.swing.JPanel;
 
@@ -24,6 +25,9 @@ import com.mjsamaha.game.ui.UserInterface;
 
 public class GamePanel extends JPanel implements Runnable {
     private static final long serialVersionUID = 1L;
+    
+    private static final Logger LOGGER =
+            Logger.getLogger(GamePanel.class.getSimpleName());
     
     // Screen Settings
     public final int tileSize = Constants.Screen.TILE_SIZE;
@@ -63,9 +67,13 @@ public class GamePanel extends JPanel implements Runnable {
     public Entity[] monster = new Entity[Constants.EntityArrays.MAX_MONSTERS];
     
     public GamePanel() {
+        LOGGER.info("Initializing GamePanel...");
+
         initializePanel();
         initializeManagers();
         initializeAudio();
+
+        LOGGER.info("GamePanel initialization complete.");
     }
     
     private void initializePanel() {
@@ -76,6 +84,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
     
     private void initializeManagers() {
+        LOGGER.info("Initializing managers...");
+
         keyH = new KeyHandler();
         mouseH = new MouseHandler(this);
         stateManager = new GameStateManager();
@@ -88,11 +98,12 @@ public class GamePanel extends JPanel implements Runnable {
         ui = new UserInterface(this);
         player = new Player(this, keyH);
         renderer = new Renderer(this);
-        
-        // Add listeners
+
         this.addKeyListener(keyH);
         this.addMouseListener(mouseH);
         this.addMouseMotionListener(mouseH);
+
+        LOGGER.info("Managers initialized successfully.");
     }
     
     private void initializeAudio() {
@@ -100,13 +111,21 @@ public class GamePanel extends JPanel implements Runnable {
     }
     
     public void setupGame() {
+        LOGGER.info("Setting up game assets...");
+
         aManager.setObject();
         aManager.setNPC();
         aManager.setMonster();
+
+        LOGGER.info("Spawning entities complete.");
+
         playMusic(SoundEvent.MUSIC_AMBIENT_LOOP);
+        LOGGER.info("Background music started.");
     }
     
     public void startGameThread() {
+        LOGGER.info("Starting game thread...");
+
         gameThread = new Thread(this);
         gameThread.start();
     }
@@ -133,8 +152,8 @@ public class GamePanel extends JPanel implements Runnable {
             }
             
             if (timer >= Constants.GameLoop.TIMER_INTERVAL) {
-                System.out.println("FPS: " + drawCount);
-                drawCount = 0;
+            	LOGGER.fine("FPS: " + drawCount);                
+            	drawCount = 0;
                 timer = 0;
             }
         }
@@ -161,7 +180,6 @@ public class GamePanel extends JPanel implements Runnable {
         if (checkDrawTime) {
             long drawEnd = System.nanoTime();
             long passed = drawEnd - drawStart;
-            System.out.println("Draw time: " + passed);
         }
         
         g2.dispose();

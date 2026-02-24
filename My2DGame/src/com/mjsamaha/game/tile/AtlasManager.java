@@ -3,6 +3,8 @@ package com.mjsamaha.game.tile;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.mjsamaha.game.GamePanel;
 
@@ -18,6 +20,8 @@ import com.mjsamaha.game.GamePanel;
  *   TextureRegion region = AtlasManager.getRegion("grass00");
  */
 public class AtlasManager {
+	
+    private static final Logger LOGGER = Logger.getLogger(AtlasManager.class.getSimpleName());
     
     private static AtlasManager instance;
     private final Map<String, TextureAtlas> atlases;
@@ -59,7 +63,7 @@ public class AtlasManager {
      * Add new atlases here as you create them (entities, effects, UI, etc.)
      */
     private void loadAllAtlases() {
-        System.out.println("\n=== Loading Texture Atlases ===");
+        LOGGER.info("=== Loading Texture Atlases ===");
         
         try {
             // Load terrain atlas (grass, water, roads, walls, trees)
@@ -76,12 +80,11 @@ public class AtlasManager {
             // TextureAtlas entityAtlas = new TextureAtlas("entities", "/atlas/entity_atlas.png", ...);
             // atlases.put("entities", entityAtlas);
             
-            System.out.println("✅ All atlases loaded successfully\n");
+            LOGGER.info("All atlases loaded successfully.");
             
         } catch (IOException e) {
-            System.err.println("❌ ERROR: Failed to load atlases!");
-            e.printStackTrace();
-            System.err.println("\nFalling back to individual tile loading...\n");
+            LOGGER.log(Level.SEVERE, "Failed to load atlases! Falling back to individual tiles.", e);
+            
         }
     }
     
@@ -106,7 +109,7 @@ public class AtlasManager {
             }
         }
         
-        System.err.println("⚠️  Texture region not found: " + textureId);
+        LOGGER.warning("Texture region not found: " + textureId);
         return null;
     }
     
@@ -120,7 +123,11 @@ public class AtlasManager {
     public static TextureRegion getRegion(String atlasName, String textureId) {
         TextureAtlas atlas = getInstance().atlases.get(atlasName);
         if (atlas == null) {
-            System.err.println("⚠️  Atlas not found: " + atlasName);
+            LOGGER.warning("Atlas not found: " + atlasName);
+            return null;
+        }
+        if (!atlas.hasRegion(textureId)) {
+            LOGGER.warning("Texture region not found in atlas '" + atlasName + "': " + textureId);
             return null;
         }
         return atlas.getRegion(textureId);
@@ -149,11 +156,8 @@ public class AtlasManager {
      * Prints debug information about all loaded atlases.
      */
     public static void printDebugInfo() {
-        System.out.println("\n=== AtlasManager Debug Info ===");
-        System.out.println("Loaded atlases: " + getInstance().atlases.size());
         for (TextureAtlas atlas : getInstance().atlases.values()) {
             atlas.printDebugInfo();
         }
-        System.out.println("==============================\n");
     }
 }

@@ -1,17 +1,21 @@
 package com.mjsamaha.game.managers;
 
+import java.util.logging.Logger;
+
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.GreenSlime;
 import com.mjsamaha.game.entity.OldMan;
 
 public class AssetManager {
 	
+	private static final Logger LOGGER = Logger.getLogger(AssetManager.class.getSimpleName());
+
+	
 	GamePanel gp;
 	
 	public AssetManager(GamePanel gp) {
 		
 		this.gp = gp;
-		
 	}
 	
 	public void setObject() {
@@ -25,8 +29,8 @@ public class AssetManager {
 		gp.npc[0] = new OldMan(gp);
 		gp.npc[0].worldX = gp.tileSize * 21;
 		gp.npc[0].worldY = gp.tileSize * 21;
+		LOGGER.info("NPCs set: OldMan at (21, 21)");
 		
-	    System.out.println("✅ Key placed at tile (24, 21) - should be visible immediately");
 
 		
 	}

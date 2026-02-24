@@ -5,8 +5,12 @@ import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FontManager {
+    private static final Logger LOGGER = Logger.getLogger(FontManager.class.getSimpleName());
+
     private static FontManager instance;
 
     private Font minecraft20;
@@ -36,10 +40,15 @@ public class FontManager {
                 minecraft30 = base.deriveFont(Font.PLAIN, 30f);
                 minecraft50 = base.deriveFont(Font.PLAIN, 50f);
                 minecraft80B = base.deriveFont(Font.BOLD, 80f);
+                LOGGER.info("✅ Minecraft.ttf loaded successfully with all font sizes.");
+                
                 return;
+                
+            } else {
+                LOGGER.warning("❌ Minecraft.ttf not found in resources; using fallback fonts.");
             }
         } catch (FontFormatException | IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.WARNING, "❌ Failed to load Minecraft.ttf; using fallback fonts.", e);
         }
 
         // fallback fonts
@@ -48,6 +57,9 @@ public class FontManager {
         minecraft30 = new Font("Arial", Font.PLAIN, 30);
         minecraft50 = new Font("Arial", Font.PLAIN, 50);
         minecraft80B = new Font("Arial", Font.BOLD, 80);
+        
+        LOGGER.info("ℹ️ Fallback fonts loaded successfully.");
+
     }
 
     public Font getSmall() { return minecraft20; }

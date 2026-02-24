@@ -1,6 +1,9 @@
 package com.mjsamaha.game.entity;
 
 import java.util.Random;
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
@@ -8,6 +11,8 @@ import com.mjsamaha.game.entity.common.Entity;
 
 public class GreenSlime extends Entity {
 	
+	private static final Logger LOGGER = Logger.getLogger(OldMan.class.getSimpleName());
+
 	private Random random;
 	
 	public GreenSlime(GamePanel gp) {
@@ -33,6 +38,7 @@ public class GreenSlime extends Entity {
 		solidAreaDefaultY = solidArea.y;
 		
 		getImage();
+	    LOGGER.info("Spawned GreenSlime at x=" + worldX + ", y=" + worldY + ", HP=" + health);
 	}
 	
 	/**
@@ -80,5 +86,6 @@ public class GreenSlime extends Entity {
 	public void damageReaction() {
 		actionLockCounter = 0;
 		direction = gp.player.direction;
+	    LOGGER.fine(name + " reacts to damage, now facing " + direction);
 	}
 }

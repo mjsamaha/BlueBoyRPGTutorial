@@ -3,6 +3,7 @@ package com.mjsamaha.game.ui;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.ui.overlay.DebugOverlay;
@@ -21,6 +22,9 @@ import com.mjsamaha.game.ui.screen.PauseScreen;
  * large monolithic UserInterface.java and keeps only orchestration logic.
  */
 public class UserInterface {
+	
+    private static final Logger LOGGER = Logger.getLogger(UserInterface.class.getSimpleName());
+
     private final GamePanel gp;
     private final UIState state = new UIState();
     private final FontManager fm = FontManager.getInstance();
@@ -49,6 +53,9 @@ public class UserInterface {
         hud = new HUD(gp, state);
         dialogueBox = new DialogueBox(gp, state);
         debugOverlay = new DebugOverlay(gp);
+        
+        LOGGER.info("UserInterface initialized with modular renderers.");
+
     }
     
     public MenuScreen getMenuScreen() { return menuScreen; }

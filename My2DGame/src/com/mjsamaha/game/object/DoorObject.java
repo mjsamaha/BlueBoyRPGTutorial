@@ -28,9 +28,6 @@ public class DoorObject extends GameObject implements Usable {
         if (player.keys > 0) {
             player.keys--;
             collision = false;
-            System.out.println("Door unlocked!");
-        } else {
-            System.out.println("You need a key.");
         }
     }
 }

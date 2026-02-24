@@ -29,11 +29,9 @@ public class Sound {
 
 	private void loadClip() {
 	    try {
-	        System.out.println("Loading audio: " + resource);
 
 	        URL url = getClass().getResource(resource);
 	        if (url == null) {
-	            System.err.println("Audio resource not found: " + resource);
 	            return;
 	        }
 
@@ -41,10 +39,8 @@ public class Sound {
 	        clip = AudioSystem.getClip();
 	        clip.open(ais);
 
-	        System.out.println("Loaded successfully: " + resource);
 
 	    } catch (UnsupportedAudioFileException e) {
-	        System.err.println("Unsupported audio format: " + resource);
 	        e.printStackTrace();
 	    } catch (IOException | LineUnavailableException e) {
 	        e.printStackTrace();

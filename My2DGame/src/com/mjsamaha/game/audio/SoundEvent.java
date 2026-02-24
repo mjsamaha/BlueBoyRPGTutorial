@@ -1,5 +1,8 @@
 package com.mjsamaha.game.audio;
 
+import java.util.Arrays;
+import java.util.logging.Logger;
+
 public enum SoundEvent {
 	MUSIC_BLUE_BOY("music_blue_boy"), 
 	MUSIC_FIRST_SAMPLE("music_first_sample"),
@@ -18,6 +21,7 @@ public enum SoundEvent {
 	SFX_RECEIVE_DAMAGE("receivedamage"),
 	SFX_SWORD_SWING("sword_sfx");
 	
+    private static final Logger LOGGER = Logger.getLogger(SoundEvent.class.getSimpleName());
 
 	private final String id;
 
@@ -28,5 +32,10 @@ public enum SoundEvent {
 	public String getId() {
 		return id;
 	}
+	
+	// Optional: log all enums loaded at class init
+    static {
+        LOGGER.info("All SoundEvent constants loaded: " + Arrays.toString(values()));
+    }
 
 }

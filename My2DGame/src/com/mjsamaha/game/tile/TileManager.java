@@ -5,10 +5,18 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.mjsamaha.game.GamePanel;
 
 public class TileManager {
-
+	
+    private static final Logger LOGGER = Logger.getLogger(TileManager.class.getSimpleName());
+    
     GamePanel gp;
     public int[][] mapTileNum;
     private String currentMapPath; 
@@ -26,6 +34,32 @@ public class TileManager {
         loadMap("/maps/worldV2.txt");
     }
     
+    /**
+     * Implementation: ??
+     * private void registerTiles() {
+        // IDs 0–9: Placeholder grass tiles
+        for (int i = 0; i <= 9; i++) {
+            TileRegistry.register(new TileDefinition(i, "grass00", false, null));
+        }
+
+        // IDs 10–25: Floors and water
+        TileRegistry.register(new TileDefinition(10, "grass00", false, null));
+        TileRegistry.register(new TileDefinition(11, "grass01", false, null));
+        for (int i = 12; i <= 25; i++) {
+            TileRegistry.register(new TileDefinition(i, "water" + String.format("%02d", i - 12), true, null));
+        }
+
+        // IDs 26–38: Roads
+        for (int i = 26; i <= 38; i++) {
+            TileRegistry.register(new TileDefinition(i, "road" + String.format("%02d", i - 26), false, null));
+        }
+
+        // IDs 39–41: Special tiles
+        TileRegistry.register(new TileDefinition(39, "earth", false, null));
+        TileRegistry.register(new TileDefinition(40, "wall", true, null));
+        TileRegistry.register(new TileDefinition(41, "tree", true, null));
+    }
+     */
     
     /*
      * Or you could load it from JSON, e.g.:
@@ -98,6 +132,11 @@ public class TileManager {
         try {
             InputStream is = getClass().getResourceAsStream(filePath);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            
+            if (is == null) {
+                LOGGER.severe("Map file not found: " + filePath);
+                return;
+            }
 
             // Track which IDs are used
             java.util.Set<Integer> usedIds = new java.util.HashSet<>();
@@ -114,14 +153,14 @@ public class TileManager {
 
                         // Validate tile ID against TileRegistry
                         if (TileRegistry.get(num) == null) {
-                            System.err.println("Invalid tile ID at [" + col + "][" + row + "]: " + num);
+                            LOGGER.warning("Tile ID " + num + " missing in registry; defaulting to grass00.");
                             mapTileNum[col][row] = 0; // default to grass00
                         } else {
                             mapTileNum[col][row] = num;
                         }
                     } catch (NumberFormatException e) {
-                        System.err.println("Invalid number format at [" + col + "][" + row + "]: " + numbers[col]);
                         mapTileNum[col][row] = 0; // default to grass00
+                        LOGGER.warning("Invalid number at [" + col + "][" + row + "]; defaulting to grass00.");
                     }
                 }
                 row++;
@@ -129,28 +168,28 @@ public class TileManager {
 
             br.close();
 
-            // Print summary of used IDs
-            System.out.println("\n=== Tile IDs used in " + filePath + " ===");
-            java.util.List<Integer> sortedIds = new java.util.ArrayList<>(usedIds);
-            java.util.Collections.sort(sortedIds);
+         // Log summary
+            List<Integer> sortedIds = new ArrayList<>(usedIds);
+            Collections.sort(sortedIds);
+            StringBuilder sb = new StringBuilder("\n=== Tile IDs used in ").append(filePath).append(" ===\n");
             for (int id : sortedIds) {
-                String mapping = TileRegistry.get(id) != null ? "✅ mapped" : "❌ missing";
-                System.out.println("ID " + id + ": " + mapping);
+                sb.append("ID ").append(id).append(": ")
+                  .append(TileRegistry.get(id) != null ? "✅ mapped" : "❌ missing").append("\n");
             }
-            System.out.println("=====================================\n");
+            sb.append("=====================================\n");
+            LOGGER.info(sb.toString());
 
         } catch (Exception e) {
-            System.err.println("Error loading map file: " + filePath);
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error loading map file: " + filePath, e);
         }
     }
     
     public void reloadMap() {
     	if (currentMapPath != null) {
-    		System.out.println("🔄 Reloading map from: " + currentMapPath);
+            LOGGER.info("🔄 Reloading map from: " + currentMapPath);
 			loadMap(currentMapPath);
     	} else {
-            System.err.println("❌ No map loaded to reload!");
+            LOGGER.warning("No map loaded to reload!");
     	}
     }
 
@@ -163,7 +202,7 @@ public class TileManager {
                 TileDefinition def = TileRegistry.get(tileId);
 
                 if (def == null) {
-                    System.err.println("Invalid tile number at [" + worldCol + "][" + worldRow + "]: " + tileId);
+                    LOGGER.warning("Invalid tile number at [" + worldCol + "][" + worldRow + "]: " + tileId);
                     continue;
                 }
 
@@ -190,7 +229,7 @@ public class TileManager {
                 	    tempTile.collision = def.hasCollision();
                 	    def.executeBehavior(gp, tempTile);
                 	} else {
-                	    System.err.println("Texture not found: " + def.getTextureId());
+                        LOGGER.warning("Texture not found: " + def.getTextureId());
                 	}
                 }
             }

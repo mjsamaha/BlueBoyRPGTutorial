@@ -18,9 +18,6 @@ public class KeyObject extends GameObject implements Collectible {
 		description = "{" + name + "}\nIt opens a door.";
 
         
-        System.out.println("KeyObject created!");
-        System.out.println("  - Image loaded: " + (image != null));
-        System.out.println("  - Type: " + type);
         
         pickupable = true;
         
@@ -40,6 +37,5 @@ public class KeyObject extends GameObject implements Collectible {
     public void collect(Player player) {
     	gp.playSE(SoundEvent.SFX_COIN);
         player.keys++;
-        System.out.println("Key collected! Total keys: " + player.keys);
     }
 }

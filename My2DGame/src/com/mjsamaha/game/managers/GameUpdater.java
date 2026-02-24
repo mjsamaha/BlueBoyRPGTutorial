@@ -1,11 +1,15 @@
 package com.mjsamaha.game.managers;
 
+import java.util.logging.Logger;
+
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.audio.SoundEvent;
 import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.ui.overlay.InventoryRenderer;
 
 public class GameUpdater {
+	private static final Logger LOGGER = Logger.getLogger(GameUpdater.class.getSimpleName());
+
     private final GamePanel gp;
     
     public GameUpdater(GamePanel gp) {
@@ -13,6 +17,8 @@ public class GameUpdater {
     }
     
     public void update(KeyHandler keyH) {
+        LOGGER.finer("GameUpdater tick: updating game state " + gp.stateManager.getCurrentState());
+
     	handleGlobalInputs(keyH);
         handleCharacterScreenToggle(keyH);
         

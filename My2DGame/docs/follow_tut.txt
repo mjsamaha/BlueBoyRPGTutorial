@@ -1,12 +1,7 @@
-current - #26 - UserInterface.java - 08:54 video mark
+current - #28 - Equip & Use Items
+
 
 next
-- #25 - Character Status
-- #26 - Scrolling Message, Leveling Up, Damage Calculation
-- # - Useful Functions
-- #27 - Inventory
-
-- #28 - Equip & Use Items
 - #29 - Projectiles
 - #30 - Monster Projectiles & Mana
 - #31 - Item Drops

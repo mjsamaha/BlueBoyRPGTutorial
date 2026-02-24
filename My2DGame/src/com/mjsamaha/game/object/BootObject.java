@@ -19,6 +19,5 @@ public class BootObject extends GameObject implements Collectible {
     @Override
     public void collect(Player player) {
         player.speed += 1;
-        System.out.println("Speed increased!");
     }
 }

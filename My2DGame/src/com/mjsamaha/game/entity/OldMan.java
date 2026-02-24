@@ -1,6 +1,8 @@
 package com.mjsamaha.game.entity;
 
 import java.util.Random;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
@@ -8,6 +10,8 @@ import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.entity.common.Interactive;
 
 public class OldMan extends Entity implements Interactive {
+	
+	private static final Logger LOGGER = Logger.getLogger(OldMan.class.getSimpleName());
 	
 	private Random random;
 	
@@ -21,6 +25,8 @@ public class OldMan extends Entity implements Interactive {
 		
 		getImage();
 		setDialogue();
+	    LOGGER.info("Spawned OldMan NPC at x=" + worldX + ", y=" + worldY);
+
 	}
 	
 	/**

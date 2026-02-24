@@ -1,9 +1,13 @@
 package com.mjsamaha.game.managers;
 
+import java.util.logging.Logger;
+
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.util.EventRect;
 
 public class EventHandler {
+	
+	private static final Logger LOGGER = Logger.getLogger(GameStateManager.class.getSimpleName());
 
 	public GamePanel gp;
 	public EventRect eventRect[][];
@@ -47,7 +51,6 @@ public class EventHandler {
 	}
 
 	public boolean hit(int col, int row, String reqDirection) {
-
 		boolean hit = false;
 
 		gp.player.solidArea.x = gp.player.worldX + gp.player.solidArea.x;
@@ -72,6 +75,7 @@ public class EventHandler {
 
 	private void healingPool() {
 	    if (gp.keyH.confirmPressed) {
+	    	LOGGER.info("Player interacts with healing pool at (23, 12)");
 	        gp.stateManager.toDialogueState(); // Switch to dialogue state
 	        gp.player.attackCancelled = true;
 	        gp.ui.currentDialogue = "You drink the water.\nYour life is restored.";

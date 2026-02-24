@@ -3,22 +3,32 @@ package com.mjsamaha.game;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.mjsamaha.game.entity.common.Entity;
+import com.mjsamaha.game.util.GameLogger;
 
 public class Renderer {
     private final GamePanel gp;
     private final ArrayList<Entity> entityList = new ArrayList<>();
     
+    private static final Logger LOGGER =
+            Logger.getLogger(Renderer.class.getSimpleName());
+    
+    
     public Renderer(GamePanel gp) {
         this.gp = gp;
+        LOGGER.info("Renderer initialized.");
     }
     
     public void render(Graphics2D g2) {
+
         if (gp.stateManager.isMenuState()) {
+            LOGGER.fine("Rendering MENU state.");
             renderMenu(g2);
         } else {
-            // All other states render the game world
+            LOGGER.fine("Rendering GAME state.");
             renderGame(g2);
         }
     }
@@ -28,15 +38,20 @@ public class Renderer {
     }
     
     private void renderGame(Graphics2D g2) {
+
         // Draw tiles
         gp.tileM.draw(g2);
-        
-        // Build and sort entity list
+
         buildEntityList();
         sortEntitiesByDepth();
+
+        if (LOGGER.isLoggable(Level.FINER)) {
+            LOGGER.finer("Rendering " + entityList.size() + " entities.");
+        }
+
         drawEntities(g2);
         entityList.clear();
-        
+
         // Draw UI on top
         gp.ui.draw(g2);
     }

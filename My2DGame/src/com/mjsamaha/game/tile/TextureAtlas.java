@@ -5,11 +5,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 
-import org.json.JSONObject;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import com.mjsamaha.game.GamePanel;
 
@@ -21,6 +22,9 @@ import com.mjsamaha.game.GamePanel;
  * Minecraft uses this exact approach for all block textures.
  */
 public class TextureAtlas {
+	
+    private static final Logger LOGGER = Logger.getLogger(TextureAtlas.class.getSimpleName());
+
     
     private final String name;                          // Atlas identifier (e.g., "terrain")
     private final BufferedImage atlasImage;             // The full atlas image
@@ -78,7 +82,7 @@ public class TextureAtlas {
             regions.put(id, region);
         }
         
-        System.out.println("✅ Loaded atlas '" + name + "' with " + regions.size() + " regions");
+        LOGGER.info("Loaded atlas '" + name + "' with " + regions.size() + " regions.");
     }
     
     /**
@@ -117,7 +121,7 @@ public class TextureAtlas {
             regions.put(textureIds[i], region);
         }
         
-        System.out.println("✅ Loaded atlas '" + name + "' (grid mode) with " + regions.size() + " regions");
+        LOGGER.info("Loaded atlas '" + name + "' (grid mode) with " + regions.size() + " regions.");
     }
     
     /**
@@ -180,11 +184,11 @@ public class TextureAtlas {
      * Prints debug information about this atlas.
      */
     public void printDebugInfo() {
-        System.out.println("\n=== Atlas: " + name + " ===");
-        System.out.println("Image size: " + atlasImage.getWidth() + "x" + atlasImage.getHeight());
-        System.out.println("Tile size: " + tileSize + "x" + tileSize);
-        System.out.println("Regions: " + regions.size());
-        System.out.println("Texture IDs: " + regions.keySet());
-        System.out.println("========================\n");
+        LOGGER.info("\n=== Atlas: " + name + " ===" +
+                    "\nImage size: " + atlasImage.getWidth() + "x" + atlasImage.getHeight() +
+                    "\nTile size: " + tileSize + "x" + tileSize +
+                    "\nRegions: " + regions.size() +
+                    "\nTexture IDs: " + regions.keySet() +
+                    "\n========================\n");
     }
 }

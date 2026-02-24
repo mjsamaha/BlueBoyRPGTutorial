@@ -5,6 +5,8 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
@@ -21,6 +23,7 @@ import com.mjsamaha.game.object.common.Usable;
 
 
 public class Player extends Entity {
+	private static final Logger LOGGER = Logger.getLogger(Player.class.getSimpleName());
 	
 	private KeyHandler keyH;
 	
@@ -66,6 +69,7 @@ public class Player extends Entity {
 		getPlayerImage();
 		getPlayerAttackImage();
 		setItems();
+	    LOGGER.info("Player initialized at x=" + worldX + ", y=" + worldY + ", HP=" + health);
 	}
 	
 	/**
@@ -303,6 +307,7 @@ public class Player extends Entity {
 	            }
 	            
 	            health -= damage;
+	            LOGGER.info("Player took " + damage + " damage, HP now " + health);
 	            
 	            gp.ui.addMessage(damage + " damage taken!");
 	            
@@ -314,6 +319,7 @@ public class Player extends Entity {
 	                // Handle game over here
 	                gp.ui.getState().dialogueActive = true;
 	                gp.ui.currentDialogue = "You died!";
+	                LOGGER.info("Player has died!");
 	            }
 	        }
 	    }
@@ -393,6 +399,8 @@ public class Player extends Entity {
 				}
 				
 				gp.monster[i].health -= damage;
+				LOGGER.info("Dealt " + damage + " damage to " + gp.monster[i].name + 
+	                    ", remaining HP=" + gp.monster[i].health);
 				
 				gp.ui.addMessage(damage + " damage!");
 				
@@ -402,6 +410,7 @@ public class Player extends Entity {
 			}
 			if (gp.monster[i].health <= 0 && !gp.monster[i].dying) {
 			    gp.monster[i].dying = true;
+	            LOGGER.info("Monster " + gp.monster[i].name + " killed, EXP gained=" + gp.monster[i].exp);
 			    gp.ui.addMessage("Killed the " + gp.monster[i].name + "!");
 			    gp.ui.addMessage("Exp gained: " + gp.monster[i].exp);
 			    exp += gp.monster[i].exp;
@@ -414,6 +423,7 @@ public class Player extends Entity {
 	public void checkLevelUp() {
 		if (exp >= nextLevelExp) {
 			level++;
+	        LOGGER.info("Player leveled up to level " + level + "!");
 			nextLevelExp = nextLevelExp * 2; // Example: double required EXP each level
 			maxHealth += 2; // Increase max health each level
 			strength++; // Increase strength each level

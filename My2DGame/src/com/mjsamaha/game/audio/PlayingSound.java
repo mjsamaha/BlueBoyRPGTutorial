@@ -15,7 +15,6 @@ public class PlayingSound {
 		try {
 			URL url = getClass().getResource(sound.getResource());
 			if (url == null) {
-			    System.out.println("Sound not found: " + sound.getResource());
 			    return;
 			}
 

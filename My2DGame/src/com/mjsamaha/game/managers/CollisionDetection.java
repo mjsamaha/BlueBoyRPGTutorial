@@ -1,11 +1,16 @@
 package com.mjsamaha.game.managers;
 
+import java.util.logging.Logger;
+
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.tile.TileDefinition;
 import com.mjsamaha.game.tile.TileRegistry;
 
 public class CollisionDetection {
+	
+	private static final Logger LOGGER = Logger.getLogger(CollisionDetection.class.getSimpleName());
+
 
     GamePanel gp;
 
@@ -120,6 +125,8 @@ public class CollisionDetection {
                     if (player) {
                         index = i;
                     }
+                    
+                    
 
                     break;
                 }

@@ -1,10 +1,17 @@
 package com.mjsamaha.game.audio;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class AudioInitializer {
+	
+    private static final Logger LOGGER = Logger.getLogger(AudioInitializer.class.getSimpleName());
     
     public static void initializeSounds() {
+        LOGGER.info("Initializing audio subsystem...");
         registerMusic();
         registerSoundEffects();
+        LOGGER.info("Audio subsystem initialization complete.");
     }
     
     private static void registerMusic() {
