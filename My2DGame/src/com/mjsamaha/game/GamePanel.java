@@ -4,15 +4,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
 import com.mjsamaha.game.audio.AudioInitializer;
-import com.mjsamaha.game.audio.Sound;
 import com.mjsamaha.game.audio.SoundEvent;
 import com.mjsamaha.game.audio.SoundManager;
-import com.mjsamaha.game.audio.SoundRegistry;
 import com.mjsamaha.game.entity.Player;
 import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.managers.AssetManager;
@@ -24,7 +21,6 @@ import com.mjsamaha.game.managers.KeyHandler;
 import com.mjsamaha.game.managers.MouseHandler;
 import com.mjsamaha.game.tile.TileManager;
 import com.mjsamaha.game.ui.UserInterface;
-import com.mjsamaha.game.ui.overlay.InventoryRenderer;
 
 public class GamePanel extends JPanel implements Runnable {
     private static final long serialVersionUID = 1L;

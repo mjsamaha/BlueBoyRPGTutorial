@@ -6,8 +6,8 @@ public class KeyHandler implements KeyListener {
 	public boolean upPressed, downPressed, leftPressed, rightPressed;
     public boolean confirmPressed, cancelPressed;
     public boolean characterStatePressed;
-    public boolean debugTogglePressed = false;  // ADD THIS
-    public boolean refreshPressed = false;  // ADD THIS
+    public boolean debugTogglePressed = false;  
+    public boolean refreshPressed = false;  
     
     private final InputMapper inputMapper = new InputMapper();
     

@@ -3,7 +3,6 @@ package com.mjsamaha.game.managers;
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.GreenSlime;
 import com.mjsamaha.game.entity.OldMan;
-import com.mjsamaha.game.object.KeyObject;
 
 public class AssetManager {
 	
