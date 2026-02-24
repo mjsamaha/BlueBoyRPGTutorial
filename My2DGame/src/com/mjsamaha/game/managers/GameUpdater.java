@@ -13,7 +13,8 @@ public class GameUpdater {
     }
     
     public void update(KeyHandler keyH) {
-        handleGlobalInputs(keyH);
+    	handleGlobalInputs(keyH);
+        handleCharacterScreenToggle(keyH);
         
         if (gp.stateManager.isMenuState()) {
             updateMenuState(keyH);
@@ -65,6 +66,13 @@ public class GameUpdater {
             gp.stateManager.toPauseState();
             keyH.cancelPressed = false;
         }
+        
+     // Open character screen **only if play state AND not in dialogue**
+        if (keyH.characterStatePressed && !gp.stateManager.isDialogueState()) {
+            gp.stateManager.toCharacterState();
+            gp.ui.getState().characterScreenActive = true;
+            keyH.characterStatePressed = false;
+        }
     }
     
     private void updateEntities(Entity[] entities) {
@@ -108,15 +116,18 @@ public class GameUpdater {
     }
     
     private void updateCharacterState(KeyHandler keyH) {
-        // Exit character screen
+        // Exit character screen on C
         if (keyH.characterStatePressed) {
-            gp.stateManager.toPlayState();
-            keyH.characterStatePressed = false;
-            gp.ui.getState().characterScreenActive = false;
+            gp.stateManager.toPlayState();                      // back to play
+            gp.ui.getState().characterScreenActive = false;     // hide UI
+            keyH.characterStatePressed = false;                 // reset key
+            return;                                             // skip inventory navigation
         }
         
-        // Handle inventory navigation with sound effects
-        handleInventoryNavigation(keyH);
+        // Only navigate inventory if character screen is still active
+        if (gp.ui.getState().characterScreenActive) {
+            handleInventoryNavigation(keyH);
+        }
     }
     
     private void handleInventoryNavigation(KeyHandler keyH) {
@@ -145,6 +156,17 @@ public class GameUpdater {
                 gp.playSE(SoundEvent.SFX_CURSOR);
             }
             keyH.rightPressed = false;
+        }
+    }
+    
+    private void handleCharacterScreenToggle(KeyHandler keyH) {
+        // Only toggle if not already in character screen
+        if (keyH.characterStatePressed && !gp.stateManager.isCharacterState()) {
+            if (gp.stateManager.isPlayState() || gp.stateManager.isPauseState()) {
+                gp.stateManager.toCharacterState();
+                gp.ui.getState().characterScreenActive = true;
+            }
+            keyH.characterStatePressed = false;
         }
     }
 }
