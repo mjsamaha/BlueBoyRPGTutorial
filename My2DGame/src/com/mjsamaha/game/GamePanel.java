@@ -187,9 +187,11 @@ public class GamePanel extends JPanel implements Runnable {
     
     public void playMusic(SoundEvent music) {
         soundManager.playSound(music);
+        LOGGER.info("Playing music: " + music);
     }
     
     public void playSE(SoundEvent sfx) {
         soundManager.playSound(sfx);
+        LOGGER.info("Playing sound effect: " + sfx);
     }
 }
