@@ -73,6 +73,8 @@ public class Entity implements Movable, Collidable, Drawable {
 	
 	public int attackValue;
 	public int defenseValue;
+	
+	public String description = "";
 
 	// Metadata
 	public BufferedImage image, image2, image3;

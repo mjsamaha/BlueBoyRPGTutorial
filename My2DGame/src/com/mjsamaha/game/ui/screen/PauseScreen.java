@@ -46,8 +46,8 @@ public class PauseScreen {
 
     private void selectOption() {
         switch (commandNum) {
-            case 0 -> gp.gameState = gp.playState; // Resume
-            case 1 -> gp.gameState = gp.menuState; // Quit to menu
+            case 0 -> gp.stateManager.toPlayState(); // Resume
+            case 1 -> gp.stateManager.toMenuState(); // Quit to menu
         }
     }
 

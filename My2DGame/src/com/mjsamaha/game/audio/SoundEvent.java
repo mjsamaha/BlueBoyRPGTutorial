@@ -5,6 +5,7 @@ public enum SoundEvent {
 	MUSIC_FIRST_SAMPLE("music_first_sample"),
 	MUSIC_AMBIENT_LOOP("music_ambient_loop"), 
 	SFX_MENU_SELECT("sfx_menu_select"),
+	SFX_CURSOR("sfx_cursor"),
 
 	
 	SFX_COIN("sfx_coin"), 

@@ -15,6 +15,9 @@ public class KeyObject extends GameObject implements Collectible {
         name = "Key";
         image = setup("/objects/key", gp.tileSize, gp.tileSize);
         
+		description = "{" + name + "}\nIt opens a door.";
+
+        
         System.out.println("KeyObject created!");
         System.out.println("  - Image loaded: " + (image != null));
         System.out.println("  - Type: " + type);

@@ -4,6 +4,7 @@ import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
@@ -12,6 +13,7 @@ import com.mjsamaha.game.entity.common.AnimationController;
 import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.managers.KeyHandler;
 import com.mjsamaha.game.object.HeartObject;
+import com.mjsamaha.game.object.KeyObject;
 import com.mjsamaha.game.object.ShieldObjectWood;
 import com.mjsamaha.game.object.SwordObjectNormal;
 import com.mjsamaha.game.object.common.Collectible;
@@ -27,6 +29,9 @@ public class Player extends Entity {
 	public HeartObject life;
 	public HeartObject maxLife;
 	public int keys = 0;
+	
+	public ArrayList<Entity> inventory = new ArrayList<>(); // Player inventory
+	public final int maxInventorySize = 20; // Max inventory size
 	
 	// Attack animation controller (separate from normal animation)
 	private AnimationController attackAnimController;
@@ -60,6 +65,7 @@ public class Player extends Entity {
 		setDefaultValues();
 		getPlayerImage();
 		getPlayerAttackImage();
+		setItems();
 	}
 	
 	/**
@@ -87,6 +93,14 @@ public class Player extends Entity {
 		attack = getAttack();
 		defense = getDefense();
 		
+	}
+	
+	public void setItems() {
+		inventory.add(currentWeapon);
+		inventory.add(currentShield);
+		
+		inventory.add(new KeyObject(gp));
+
 	}
 	
 	public int getAttack() {
@@ -137,7 +151,7 @@ public class Player extends Entity {
 	public void update() {
 	    // Check for character screen toggle (handle this first, before other inputs)
 	    if (keyH.characterStatePressed && !attacking) {
-	        gp.gameState = gp.characterState;
+	        gp.ui.getState().characterScreenActive = true;
 	        gp.ui.getState().characterScreenActive = true;
 	        keyH.characterStatePressed = false;
 	        return; // Don't process other updates when opening character screen
@@ -298,7 +312,7 @@ public class Player extends Entity {
 	            if (health <= 0) {
 	                health = 0;
 	                // Handle game over here
-	                gp.gameState = gp.dialogueState;
+	                gp.ui.getState().dialogueActive = true;
 	                gp.ui.currentDialogue = "You died!";
 	            }
 	        }
@@ -410,7 +424,7 @@ public class Player extends Entity {
 			// play level up sound
 			gp.playSE(SoundEvent.SFX_LEVEL_UP);
 			
-			gp.gameState = gp.dialogueState;
+			gp.stateManager.toDialogueState();
 			gp.ui.currentDialogue = "You leveled up to level " + level + "!";
 			
 		}
@@ -435,7 +449,7 @@ public class Player extends Entity {
 	    if (gp.keyH.confirmPressed && i != 999) {
 	        attackCancelled = true;
 	        attacking = false;
-	        gp.gameState = gp.dialogueState;
+	        gp.stateManager.toDialogueState();
 	        gp.npc[i].speak();
 	        gp.ui.getState().currentDialogue = gp.npc[i].getDialogue();
 	        gp.ui.getState().dialogueActive = true;

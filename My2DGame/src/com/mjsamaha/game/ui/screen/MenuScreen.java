@@ -75,7 +75,7 @@ public class MenuScreen {
 	                gp.playMusic(SoundEvent.MUSIC_BLUE_BOY);
 
 	                // Switch to play state
-	                gp.gameState = gp.playState;
+	                gp.stateManager.toPlayState();
 
 	                // Reset menu state for next time
 	                state.titleScreenState = 0;
@@ -109,7 +109,7 @@ public class MenuScreen {
 
         int tileSize = gp.tileSize;
 
-        if (gp.gameState == gp.menuState) {
+        if (gp.stateManager.isMenuState()) {
             if (state.titleScreenState == 0) {
                 drawMainTitle(g2);
             } else if (state.titleScreenState == 1) {

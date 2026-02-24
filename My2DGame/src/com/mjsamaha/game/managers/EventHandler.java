@@ -42,7 +42,7 @@ public class EventHandler {
 	    }
 	    
 	    if(hit(23, 12, "up") == true) {
-	        healingPool(gp.dialogueState);
+	        healingPool();
 	    }
 	}
 
@@ -70,18 +70,16 @@ public class EventHandler {
 
 	}
 
-	private void healingPool(int gameState) {
-		if (gp.keyH.confirmPressed) {
-			gp.gameState = gameState;
-			gp.player.attackCancelled = true;
-			gp.ui.currentDialogue = "You drink the water.\nYour life is restored.";
-			gp.player.health = gp.player.maxHealth;
+	private void healingPool() {
+	    if (gp.keyH.confirmPressed) {
+	        gp.stateManager.toDialogueState(); // Switch to dialogue state
+	        gp.player.attackCancelled = true;
+	        gp.ui.currentDialogue = "You drink the water.\nYour life is restored.";
+	        gp.player.health = gp.player.maxHealth;
 
-			gp.aManager.setMonster();
+	        gp.aManager.setMonster();
 
-			gp.keyH.confirmPressed = false; // Reset confirm key
-
-		}
+	        gp.keyH.confirmPressed = false; // Reset confirm key
+	    }
 	}
-
 }
