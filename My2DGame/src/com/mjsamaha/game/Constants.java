@@ -168,7 +168,7 @@ public class Constants {
 	public static final class Monster {
 		// Green Slime settings
 		public static final int SLIME_SPEED = 1;
-		public static final int SLIME_MAX_HEALTH = 2;
+		public static final int SLIME_MAX_HEALTH = 3;
 		public static final int SLIME_DAMAGE = 1;
 
 		// Collision box for Green Slime

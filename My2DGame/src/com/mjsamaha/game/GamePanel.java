@@ -100,6 +100,8 @@ public class GamePanel extends JPanel implements Runnable {
 		SoundRegistry.register(new Sound("hitmonster", "/audio/hitmonster.wav", 1.0f, 1.0f, false));
 		SoundRegistry.register(new Sound("receivedamage", "/audio/receivedamage.wav", 1.0f, 1.0f, false));
 		SoundRegistry.register(new Sound("sword_sfx", "/audio/sword_sfx.wav", 1.0f, 1.0f, false));
+		SoundRegistry.register(new Sound("sfx_level_up", "/audio/levelup.wav", 1.0f, 1.0f, false));
+
 	}
 
 	/**

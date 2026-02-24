@@ -157,11 +157,15 @@ public class Player extends Entity {
 	        handleMovement();
 	        animationController.update();
 	    }
+	    
+	    gp.eHandler.checkEvent(); // Check for events after movement
 
 	    int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
 	    interactNPC(npcIndex);
 
-	    
+	    // ADD THIS LINE - Check for monster contact and take damage
+	    int monsterIndex = gp.cChecker.checkEntity(this, gp.monster);
+	    contactMonster(monsterIndex);
 
 	    updateInvincibility();
 	}
@@ -273,6 +277,34 @@ public class Player extends Entity {
 		
 	}
 	
+	private void contactMonster(int i) {
+		if (i != 999) { // 999 means no collision
+	        if (!invincible && !gp.monster[i].dying) {
+	            // Play damage sound
+	            gp.playSE(SoundEvent.SFX_RECEIVE_DAMAGE);
+	            
+	            int damage = gp.monster[i].attack - defense;
+	            if (damage < 0) {
+	                damage = 1; // Always take at least 1 damage
+	            }
+	            
+	            health -= damage;
+	            
+	            gp.ui.addMessage(damage + " damage taken!");
+	            
+	            invincible = true;
+	            
+	            // Optional: Check if player died
+	            if (health <= 0) {
+	                health = 0;
+	                // Handle game over here
+	                gp.gameState = gp.dialogueState;
+	                gp.ui.currentDialogue = "You died!";
+	            }
+	        }
+	    }
+	}
+	
 	/**
 	 * Handles attack animation and damage detection
 	 */
@@ -354,15 +386,35 @@ public class Player extends Entity {
 				gp.monster[i].damageReaction();
 				
 			}
-			if (gp.monster[i].health <= 0) {
-				gp.monster[i].dying = true;
-				gp.ui.addMessage("Killed the " + gp.monster[i].name + "!");
+			if (gp.monster[i].health <= 0 && !gp.monster[i].dying) {
+			    gp.monster[i].dying = true;
+			    gp.ui.addMessage("Killed the " + gp.monster[i].name + "!");
+			    gp.ui.addMessage("Exp gained: " + gp.monster[i].exp);
+			    exp += gp.monster[i].exp;
+			    checkLevelUp();
 			}
 		}
 	}
 	
 	
-	
+	public void checkLevelUp() {
+		if (exp >= nextLevelExp) {
+			level++;
+			nextLevelExp = nextLevelExp * 2; // Example: double required EXP each level
+			maxHealth += 2; // Increase max health each level
+			strength++; // Increase strength each level
+			dexterity++; // Increase dexterity each level
+			attack = getAttack(); // Recalculate attack based on new strength
+			defense = getDefense(); // Recalculate defense based on new dexterity
+			
+			// play level up sound
+			gp.playSE(SoundEvent.SFX_LEVEL_UP);
+			
+			gp.gameState = gp.dialogueState;
+			gp.ui.currentDialogue = "You leveled up to level " + level + "!";
+			
+		}
+	}
 	/**
 	 * Updates invincibility timer
 	 */
@@ -380,16 +432,14 @@ public class Player extends Entity {
 	 * Handles NPC interaction and attack input
 	 */
 	private void interactNPC(int i) {
-	    if (gp.keyH.confirmPressed) {
-	        if (i != 999) {
-	            attackCancelled = true; // Cancel attack if NPC nearby
-	            attacking = false; // Stop any ongoing attack
-	            gp.gameState = gp.dialogueState;
-	            gp.npc[i].speak();
-	            gp.ui.getState().currentDialogue = gp.npc[i].getDialogue();
-	            gp.ui.getState().dialogueActive = true;
-	        }
-	        gp.keyH.confirmPressed = false; // Consume the input
+	    if (gp.keyH.confirmPressed && i != 999) {
+	        attackCancelled = true;
+	        attacking = false;
+	        gp.gameState = gp.dialogueState;
+	        gp.npc[i].speak();
+	        gp.ui.getState().currentDialogue = gp.npc[i].getDialogue();
+	        gp.ui.getState().dialogueActive = true;
+	        gp.keyH.confirmPressed = false; // Only consume if NPC was found
 	    }
 	}
 	

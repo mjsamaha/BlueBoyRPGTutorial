@@ -21,6 +21,7 @@ public class GreenSlime extends Entity {
 		this.random = new Random();
 		this.attack = 3;
 		this.defense = 0;
+		this.exp = 2;
 		
 		// Set collision box using constants
 		solidArea.x = Constants.Monster.SLIME_COLLISION_X;

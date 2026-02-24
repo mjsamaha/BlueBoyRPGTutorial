@@ -1,5 +1,6 @@
 package com.mjsamaha.game.ui;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
@@ -67,6 +68,30 @@ public class UserInterface {
 		int messageX = gp.tileSize;
 		int messageY = gp.tileSize * 4;
 		g2.setFont(fm.getSmallBold());
+		
+		for (int i = 0; i < msg.size(); i++) {
+			
+			if (msg.get(i) != null) {
+				g2.setColor(Color.BLACK);
+				g2.drawString(msg.get(i), messageX+2, messageY+2);
+				
+				g2.setColor(Color.WHITE);
+				g2.drawString(msg.get(i), messageX, messageY);
+				
+				int counter = msgCounter.get(i) + 1;
+				msgCounter.set(i, counter);
+								
+				if (msgCounter.get(i) > 180) {
+					msg.remove(i);
+					msgCounter.remove(i);
+				}
+				
+				messageY += 50;
+
+				
+				
+			}
+		}
 		
 	}
 
