@@ -59,8 +59,8 @@ public class Player extends Entity {
 		solidArea.height = Constants.Player.COLLISION_BOX_HEIGHT;
 		
 		// Attack area
-		attackArea.width = 36;
-		attackArea.height = 36;
+//		attackArea.width = 36;
+//		attackArea.height = 36;
 		
 		// Create separate animation controller for attacks
 		attackAnimController = new AnimationController(5); // Faster attack animation
@@ -108,6 +108,7 @@ public class Player extends Entity {
 	}
 	
 	public int getAttack() {
+		attackArea = currentWeapon.attackArea; // Update attack area based on current weapon
 		return attack = strength * currentWeapon.attackValue;
 	}
 	
@@ -154,11 +155,16 @@ public class Player extends Entity {
 	@Override
 	public void update() {
 	    // Check for character screen toggle (handle this first, before other inputs)
-	    if (keyH.characterStatePressed && !attacking) {
-	        gp.ui.getState().characterScreenActive = true;
-	        gp.ui.getState().characterScreenActive = true;
+		if (keyH.characterStatePressed && !attacking) {
+	        gp.ui.getState().characterScreenActive = !gp.ui.getState().characterScreenActive;
 	        keyH.characterStatePressed = false;
-	        return; // Don't process other updates when opening character screen
+	        return;
+	    }
+	    
+		// Handle selection inside inventory
+	    if (gp.ui.getState().characterScreenActive && keyH.confirmPressed) {
+	        selectItem();
+	        keyH.confirmPressed = false;
 	    }
 	    
 	    // Handle attack input
@@ -471,20 +477,36 @@ public class Player extends Entity {
 	 * Handles object pickup (to be implemented)
 	 */
 	private void pickupObject(int i) {
+	    if (i == 999 || gp.obj[i] == null) return; // Nothing to pick up
 
-	    if (i == 999) return;
+	    Entity obj = gp.obj[i]; // Temporary reference
 
-	    if (gp.obj[i] instanceof Collectible) {
-
-	        Collectible item = (Collectible) gp.obj[i];
-	        item.collect(this);
-
-	        gp.obj[i] = null; // remove from world
+	    // First, handle Collectible and Usable effects
+	    if (obj instanceof Collectible) {
+	        ((Collectible) obj).collect(this);
+	    } else if (obj instanceof Usable && gp.keyH.confirmPressed) {
+	        ((Usable) obj).use(this);
+	        // Remove consumable from world immediately
+	        gp.obj[i] = null;
+	        return;
 	    }
-	    else if (gp.obj[i] instanceof Usable && gp.keyH.confirmPressed) {
-	        Usable usable = (Usable) gp.obj[i];
-	        usable.use(this);
+
+	    // Add to inventory if there's space
+	    String text;
+	    if (inventory.size() < maxInventorySize) {
+	        inventory.add(obj);
+	        gp.playSE(SoundEvent.SFX_COIN);
+	        text = "Picked up " + obj.name + "!";
+	        LOGGER.info("Picked up " + obj.name + ", added to inventory. Inventory size: " + inventory.size());
+	    } else {
+	        text = "Inventory full! Cannot pick up " + obj.name + ".";
+	        LOGGER.info("Failed to pick up " + obj.name + ". Inventory is full at size: " + inventory.size());
 	    }
+
+	    gp.ui.addMessage(text);
+
+	    // Remove from world
+	    gp.obj[i] = null;
 	}
 	
 	@Override
@@ -524,6 +546,35 @@ public class Player extends Entity {
 		
 		// Reset composite
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+	}
+	
+	public void selectItem() {
+	    int itemIndex = gp.ui.inventoryRenderer.getItemIndexOnSlot();
+	    
+	    if (itemIndex < inventory.size()) {
+	        Entity selectedItem = inventory.get(itemIndex);
+	        
+	        if (selectedItem.type == type_sword || selectedItem.type == type_axe) {
+	            currentWeapon = inventory.get(itemIndex); // Use the inventory object
+	            attack = getAttack();
+	        }
+	        else if (selectedItem.type == type_shield) {
+	            currentShield = selectedItem;
+	            defense = getDefense();
+	        }
+	        else if (selectedItem.type == type_consumable) {
+	            ((Usable)selectedItem).use(this);
+	            inventory.remove(itemIndex);
+	            
+	            // If removing, move cursor back so it doesn't go out of bounds
+	            if (itemIndex >= inventory.size()) {
+	                gp.ui.inventoryRenderer.slotCol = (inventory.size() - 1) % 5;
+	                gp.ui.inventoryRenderer.slotRow = (inventory.size() - 1) / 5;
+	            }
+	        }
+	    }
+
+	    
 	}
 	
 	/**

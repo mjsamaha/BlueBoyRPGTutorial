@@ -18,7 +18,7 @@ public class OldMan extends Entity implements Interactive {
 	public OldMan(GamePanel gp) {
 		super(gp);
 		
-		this.type = 1; // NPC type
+		this.type = type_npc;
 		this.direction = "down";
 		this.speed = Constants.EntityArrays.DEFAULT_SPEED;
 		this.random = new Random();

@@ -7,7 +7,7 @@ public class ShieldObjectWood extends Entity {
 	
 	public ShieldObjectWood(GamePanel gp) {
 		super(gp);
-		
+		type = type_shield;
 		name = "Wooden Shield";
 		
 		down1 = setup("/objects/shield_wood", gp.tileSize, gp.tileSize);

@@ -19,7 +19,7 @@ public class GreenSlime extends Entity {
 		super(gp);
 		
 		this.name = "Green Slime";
-		this.type = 2; // Monster type
+		this.type = type_monster;
 		this.speed = Constants.Monster.SLIME_SPEED;
 		this.maxHealth = Constants.Monster.SLIME_MAX_HEALTH;
 		this.health = maxHealth;

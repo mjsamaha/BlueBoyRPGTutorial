@@ -45,29 +45,47 @@ public class InventoryRenderer {
     private void drawInventoryItems(Graphics2D g2) {
         int frameX = gp.tileSize * 9;
         int frameY = gp.tileSize;
-        
+
         final int slotXstart = frameX + 20;
         final int slotYstart = frameY + 20;
         int slotX = slotXstart;
         int slotY = slotYstart;
         int slotSize = gp.tileSize + SLOT_SPACING;
-        
+
         for (int i = 0; i < gp.player.inventory.size(); i++) {
-            BufferedImage itemImage = getItemImage(gp.player.inventory.get(i));
-            
+            Entity item = gp.player.inventory.get(i);
+            BufferedImage itemImage = getItemImage(item);
+
+            // Highlight equipped weapon or shield by reference
+            if (item == gp.player.currentWeapon || item == gp.player.currentShield) {
+                g2.setColor(new Color(240, 190, 90, 150));
+                g2.fillRoundRect(slotX, slotY, gp.tileSize, gp.tileSize, 10, 10);
+            }
+
+            // Draw the item image
             if (itemImage != null) {
                 g2.drawImage(itemImage, slotX, slotY, null);
             }
-            
+
+            // Draw highlight for currently selected slot
+            int indexOnSlot = getItemIndexOnSlot();
+            if (i == indexOnSlot) {
+                g2.setColor(Color.YELLOW);
+                g2.setStroke(new BasicStroke(3));
+                g2.drawRoundRect(slotX, slotY, gp.tileSize, gp.tileSize, 10, 10);
+            }
+
+            // Advance slot position
             slotX += slotSize;
-            
-            // Move to next row after every 5 items
+
+            // Move to next row after every INVENTORY_COLS items
             if ((i + 1) % INVENTORY_COLS == 0) {
                 slotX = slotXstart;
-                slotY += gp.tileSize;
+                slotY += gp.tileSize + SLOT_SPACING;
             }
         }
     }
+    
     
     private void drawCursor(Graphics2D g2) {
         int frameX = gp.tileSize * 9;

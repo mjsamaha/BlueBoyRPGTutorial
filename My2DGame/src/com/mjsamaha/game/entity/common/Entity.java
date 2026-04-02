@@ -57,7 +57,7 @@ public class Entity implements Movable, Collidable, Drawable {
 	public String dialogue[] = new String[Constants.Dialogue.MAX_DIALOGUE_LINES];
 	public int dialogueIndex = 0;
 
-	// Stats
+	// Stats	
 	public int maxHealth;
 	public int health;
 	public int level;
@@ -81,6 +81,13 @@ public class Entity implements Movable, Collidable, Drawable {
 	public String name;
 	public boolean collision = false;
 	public int type; // 0 = player, 1 = npc, 2 = monster
+	public final int type_player = 0;
+	public final int type_npc = 1;
+	public final int type_monster = 2;
+	public final int type_sword = 3;
+	public final int type_axe = 4;
+	public final int type_shield = 5;
+	public final int type_consumable = 6;
 
 	/**
 	 * Creates a new Entity with default animation controller
@@ -204,7 +211,7 @@ public class Entity implements Movable, Collidable, Drawable {
 		boolean contactPlayer = gp.cChecker.checkPlayer(this);
 
 		// Monster collision with player
-		if (this.type == 2 && contactPlayer == true) {
+		if (this.type == type_monster && contactPlayer == true) {
 		    // Don't damage player if they're currently attacking
 		    if (gp.player.invincible == false && gp.player.attacking == false) {
 		        gp.playSE(SoundEvent.SFX_RECEIVE_DAMAGE); // Changed from SFX_HIT_MONSTER

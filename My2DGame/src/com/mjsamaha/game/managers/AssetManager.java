@@ -5,6 +5,9 @@ import java.util.logging.Logger;
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.GreenSlime;
 import com.mjsamaha.game.entity.OldMan;
+import com.mjsamaha.game.object.AxeObject;
+import com.mjsamaha.game.object.KeyObject;
+import com.mjsamaha.game.object.ShieldObjectWood;
 
 public class AssetManager {
 	
@@ -20,7 +23,28 @@ public class AssetManager {
 	
 	public void setObject() {
 
-	
+		int i = 0;
+		gp.obj[i] = new KeyObject(gp);
+		gp.obj[i].worldX = gp.tileSize * 25;
+		gp.obj[i].worldY = gp.tileSize * 23;
+		i++;
+		
+		gp.obj[i] = new KeyObject(gp);
+		gp.obj[i].worldX = gp.tileSize * 21;
+		gp.obj[i].worldY = gp.tileSize * 19;
+		i++;
+		
+		gp.obj[i] = new AxeObject(gp);
+		gp.obj[i].worldX = gp.tileSize * 33;
+		gp.obj[i].worldY = gp.tileSize * 21;
+		i++;
+		
+		gp.obj[i] = new ShieldObjectWood(gp);
+		gp.obj[i].worldX = gp.tileSize * 35;
+		gp.obj[i].worldY = gp.tileSize * 21;
+		i++;
+		
+		
 	
 	}
 	

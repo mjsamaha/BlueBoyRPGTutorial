@@ -32,7 +32,7 @@ public class UserInterface {
     private MenuScreen menuScreen;
     private PauseScreen pauseScreen;
     private CharacterScreen characterScreen;
-    private final InventoryRenderer inventoryRenderer;
+    public final InventoryRenderer inventoryRenderer;
     
     private final DebugOverlay debugOverlay;
     private final HUD hud;
