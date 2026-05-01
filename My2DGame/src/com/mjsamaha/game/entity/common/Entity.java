@@ -195,6 +195,10 @@ public class Entity implements Movable, Collidable, Drawable {
 		}
 		return dialogue[dialogueIndex++];
 	}
+	
+	public void use(Entity entity) {
+		// Override in subclasses for items
+	}
 
 	/**
 	 * Updates entity state. Override in subclasses for custom behavior.

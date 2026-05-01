@@ -122,18 +122,26 @@ public class GameUpdater {
     }
     
     private void updateCharacterState(KeyHandler keyH) {
-        // Exit character screen on C
-        if (keyH.characterStatePressed) {
-            gp.stateManager.toPlayState();                      // back to play
-            gp.ui.getState().characterScreenActive = false;     // hide UI
-            keyH.characterStatePressed = false;                 // reset key
-            return;                                             // skip inventory navigation
-        }
-        
-        // Only navigate inventory if character screen is still active
-        if (gp.ui.getState().characterScreenActive) {
-            handleInventoryNavigation(keyH);
-        }
+        // Handle item selection with ENTER
+    	if (keyH.confirmPressed) {
+    		gp.player.selectItem();
+    		gp.playSE(SoundEvent.SFX_COIN);
+    		keyH.confirmPressed = false;
+    	}
+    	
+    	// Exit character screen on C or ESC
+    	if (keyH.characterStatePressed || keyH.cancelPressed) {
+    		gp.stateManager.toPlayState();
+			gp.ui.getState().characterScreenActive = false;
+			keyH.characterStatePressed = false;
+			keyH.cancelPressed = false;
+			return;
+    	}
+    	
+    	// Only navigate inventory if character screen is active
+    	if (gp.ui.getState().characterScreenActive) {
+			handleInventoryNavigation(keyH);
+    	}
     }
     
     private void handleInventoryNavigation(KeyHandler keyH) {

@@ -7,6 +7,8 @@ import com.mjsamaha.game.entity.GreenSlime;
 import com.mjsamaha.game.entity.OldMan;
 import com.mjsamaha.game.object.AxeObject;
 import com.mjsamaha.game.object.KeyObject;
+import com.mjsamaha.game.object.PotionObject;
+import com.mjsamaha.game.object.ShieldObjectBlue;
 import com.mjsamaha.game.object.ShieldObjectWood;
 
 public class AssetManager {
@@ -43,6 +45,18 @@ public class AssetManager {
 		gp.obj[i].worldX = gp.tileSize * 35;
 		gp.obj[i].worldY = gp.tileSize * 21;
 		i++;
+		
+		gp.obj[i] = new ShieldObjectBlue(gp);
+		gp.obj[i].worldX = gp.tileSize * 37;
+		gp.obj[i].worldY = gp.tileSize * 21;
+		i++;
+		
+		gp.obj[i] = new PotionObject(gp);
+		gp.obj[i].worldX = gp.tileSize * 22;
+		gp.obj[i].worldY = gp.tileSize * 27;
+		i++;
+		
+		
 		
 		
 	
