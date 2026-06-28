@@ -38,7 +38,7 @@ public class HUD {
 
         int fullHearts = gp.player.health / 2;    // 2 health = 1 full heart
         int halfHearts = gp.player.health % 2;    // 1 health = half heart
-        int maxHearts = gp.player.maxHealth / 2;  // total hearts
+        int maxHearts = (int) Math.ceil(gp.player.maxHealth / 2.0); // Max hearts based on max health
 
         // Draw full hearts
         for (int i = 0; i < fullHearts; i++) {

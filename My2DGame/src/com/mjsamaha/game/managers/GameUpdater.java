@@ -69,6 +69,7 @@ public class GameUpdater {
         
         // Pause toggle
         if (keyH.cancelPressed) {
+        	gp.playSE(SoundEvent.SFX_MENU_SELECT);
             gp.stateManager.toPauseState();
             keyH.cancelPressed = false;
         }
@@ -107,6 +108,7 @@ public class GameUpdater {
         
         // Toggle back with ESC
         if (keyH.cancelPressed) {
+        	gp.playSE(SoundEvent.SFX_MENU_SELECT);
             gp.stateManager.toPlayState();
             keyH.cancelPressed = false;
         }

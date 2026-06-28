@@ -361,7 +361,6 @@ public class Entity implements Movable, Collidable, Drawable {
 		}
 
 		if (dyingCounter > i*9) {
-			dying = false;
 			alive = false;
 		}
 

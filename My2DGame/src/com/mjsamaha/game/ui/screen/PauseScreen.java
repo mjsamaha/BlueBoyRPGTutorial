@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 import com.mjsamaha.game.GamePanel;
+import com.mjsamaha.game.audio.SoundEvent;
 import com.mjsamaha.game.managers.KeyHandler;
 import com.mjsamaha.game.ui.FontManager;
 import com.mjsamaha.game.ui.UIUtils;
@@ -28,18 +29,22 @@ public class PauseScreen {
     public void update(KeyHandler keyH) {
         if (keyH.upPressed) {
             commandNum--;
+            // play sound effect for moving up in menu
+            gp.playSE(SoundEvent.SFX_MENU_SELECT);
             if (commandNum < 0) commandNum = options.length - 1;
             keyH.upPressed = false;
         }
 
         if (keyH.downPressed) {
             commandNum++;
+            gp.playSE(SoundEvent.SFX_MENU_SELECT);
             if (commandNum >= options.length) commandNum = 0;
             keyH.downPressed = false;
         }
 
         if (keyH.confirmPressed) {
             selectOption();
+            gp.playSE(SoundEvent.SFX_MENU_SELECT);
             keyH.confirmPressed = false;
         }
     }

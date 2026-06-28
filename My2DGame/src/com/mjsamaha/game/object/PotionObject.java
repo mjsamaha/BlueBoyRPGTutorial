@@ -29,6 +29,8 @@ public class PotionObject extends Entity implements Usable {
         // Change to dialogue state using the state manager
         gp.stateManager.toDialogueState();
         
+        gp.ui.addMessage("HP: " + gp.player.health + " / " + gp.player.maxHealth);
+        
         gp.ui.currentDialogue = "You drink the " + name + "!\n" + "Your life has been recovered by " + value + ".";
         
         player.health += value;

@@ -313,7 +313,7 @@ public class Player extends Entity {
 
 	private void contactMonster(int i) {
 		if (i != 999) { // 999 means no collision
-			if (!invincible && !gp.monster[i].dying) {
+			if (!invincible && !gp.monster[i].dying == false) {
 				// Play damage sound
 				gp.playSE(SoundEvent.SFX_RECEIVE_DAMAGE);
 
@@ -570,18 +570,16 @@ public class Player extends Entity {
 				defense = getDefense();
 				
 			} else if (selectedItem.type == type_consumable) {
-				
-				selectedItem.use(this); // Call use() directly on the item, passing the player as context
-				
-				//((Usable) selectedItem).use(this);
-				
-				inventory.remove(itemIndex);
 
-				// If removing, move cursor back so it doesn't go out of bounds
-				if (itemIndex >= inventory.size()) {
-					gp.ui.inventoryRenderer.slotCol = (inventory.size() - 1) % 5;
-					gp.ui.inventoryRenderer.slotRow = (inventory.size() - 1) / 5;
-				}
+			    ((Usable) selectedItem).use(this);
+
+			    inventory.remove(itemIndex);
+
+			    if (itemIndex >= inventory.size()) {
+			        gp.ui.inventoryRenderer.slotCol = (inventory.size() - 1) % 5;
+			        gp.ui.inventoryRenderer.slotRow = (inventory.size() - 1) / 5;
+			    }
+			
 			}
 		}
 
