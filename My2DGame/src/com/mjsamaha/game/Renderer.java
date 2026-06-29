@@ -62,6 +62,12 @@ public class Renderer {
         addArrayToList(gp.npc);
         addArrayToList(gp.obj);
         addArrayToList(gp.monster);
+        
+        for (Entity p : gp.entityManager.getProjectiles()) {
+            if (p.alive) {
+                entityList.add(p);
+            }
+        }
     }
     
     private void addArrayToList(Entity[] entities) {

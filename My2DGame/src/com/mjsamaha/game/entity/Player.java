@@ -6,7 +6,6 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.logging.Logger;
-import java.util.logging.Level;
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
@@ -14,6 +13,7 @@ import com.mjsamaha.game.audio.SoundEvent;
 import com.mjsamaha.game.entity.common.AnimationController;
 import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.managers.KeyHandler;
+import com.mjsamaha.game.object.FireballObject;
 import com.mjsamaha.game.object.HeartObject;
 import com.mjsamaha.game.object.KeyObject;
 import com.mjsamaha.game.object.ShieldObjectWood;
@@ -94,6 +94,8 @@ public class Player extends Entity {
 		currentShield = new ShieldObjectWood(gp);
 		attack = getAttack();
 		defense = getDefense();
+		
+		projectile = new FireballObject(gp); 
 
 	}
 
@@ -197,6 +199,8 @@ public class Player extends Entity {
 			handleMovement();
 			animationController.update();
 		}
+		
+		handleAttack();
 
 		gp.eHandler.checkEvent();
 
@@ -207,6 +211,15 @@ public class Player extends Entity {
 		contactMonster(monsterIndex);
 
 		updateInvincibility();
+	}
+	
+	private void handleAttack() {
+		if (gp.keyH.shotKeyPressed == true && projectile.alive == false) {
+			projectile.set(worldX, worldY, direction, true, this);
+			gp.entityManager.addProjectile(projectile);
+			gp.playSE(SoundEvent.SFX_BURNING);
+			
+		}
 	}
 
 	/**
@@ -381,14 +394,15 @@ public class Player extends Entity {
 			// Check for monster hit
 			int monsterIndex = gp.cChecker.checkEntity(this, gp.monster);
 
-			// Restore position and size
+			// Restore position...
 			worldX = currentWorldX;
 			worldY = currentWorldY;
 			solidArea.width = solidAreaWidth;
 			solidArea.height = solidAreaHeight;
 
-			damageMonster(monsterIndex);
-			// contactMonster(monsterIndex);
+			if (monsterIndex != 999) {
+			    gp.monster[monsterIndex].takeDamage(this, attack);
+			}
 		}
 
 		if (attackAnimController.getSpriteCounter() > 25) {
@@ -397,41 +411,41 @@ public class Player extends Entity {
 		}
 	}
 
-	/**
-	 * Applies damage to a monster
-	 */
-	private void damageMonster(int i) {
-		if (i != 999) {
-			if (gp.monster[i].invincible == false) {
-
-				// Play hit sound
-				gp.playSE(SoundEvent.SFX_HIT_MONSTER);
-
-				int damage = attack - gp.monster[i].defense;
-				if (damage < 0) {
-					damage = 0;
-				}
-
-				gp.monster[i].health -= damage;
-				LOGGER.info("Dealt " + damage + " damage to " + gp.monster[i].name + ", remaining HP="
-						+ gp.monster[i].health);
-
-				gp.ui.addMessage(damage + " damage!");
-
-				gp.monster[i].invincible = true;
-				gp.monster[i].damageReaction();
-
-			}
-			if (gp.monster[i].health <= 0 && !gp.monster[i].dying) {
-				gp.monster[i].dying = true;
-				LOGGER.info("Monster " + gp.monster[i].name + " killed, EXP gained=" + gp.monster[i].exp);
-				gp.ui.addMessage("Killed the " + gp.monster[i].name + "!");
-				gp.ui.addMessage("Exp gained: " + gp.monster[i].exp);
-				exp += gp.monster[i].exp;
-				checkLevelUp();
-			}
-		}
-	}
+//	/**
+//	 * Applies damage to a monster
+//	 */
+//	private void damageMonster(int i) {
+//		if (i != 999) {
+//			if (gp.monster[i].invincible == false) {
+//
+//				// Play hit sound
+//				gp.playSE(SoundEvent.SFX_HIT_MONSTER);
+//
+//				int damage = attack - gp.monster[i].defense;
+//				if (damage < 0) {
+//					damage = 0;
+//				}
+//
+//				gp.monster[i].health -= damage;
+//				LOGGER.info("Dealt " + damage + " damage to " + gp.monster[i].name + ", remaining HP="
+//						+ gp.monster[i].health);
+//
+//				gp.ui.addMessage(damage + " damage!");
+//
+//				gp.monster[i].invincible = true;
+//				gp.monster[i].damageReaction();
+//
+//			}
+//			if (gp.monster[i].health <= 0 && !gp.monster[i].dying) {
+//				gp.monster[i].dying = true;
+//				LOGGER.info("Monster " + gp.monster[i].name + " killed, EXP gained=" + gp.monster[i].exp);
+//				gp.ui.addMessage("Killed the " + gp.monster[i].name + "!");
+//				gp.ui.addMessage("Exp gained: " + gp.monster[i].exp);
+//				exp += gp.monster[i].exp;
+//				checkLevelUp();
+//			}
+//		}
+//	}
 
 	public void checkLevelUp() {
 		if (exp >= nextLevelExp) {

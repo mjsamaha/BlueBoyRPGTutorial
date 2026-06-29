@@ -1,8 +1,5 @@
-current - #28 - Equip & Use Items - time: 19:22
+current - #30
 
-
-next
-- #29 - Projectiles
 - #30 - Monster Projectiles & Mana
 - #31 - Item Drops
 

@@ -16,6 +16,7 @@ public enum SoundEvent {
 	SFX_UNLOCK("sfx_unlock"), 
 	SFX_FANFARE("sfx_fanfare"), 
 	SFX_LEVEL_UP("sfx_level_up"),
+	SFX_BURNING("sfx_burning"),
 	
 	SFX_HIT_MONSTER("hitmonster"),
 	SFX_RECEIVE_DAMAGE("receivedamage"),

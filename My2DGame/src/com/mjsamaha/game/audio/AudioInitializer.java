@@ -31,5 +31,6 @@ public class AudioInitializer {
         SoundRegistry.register(new Sound("sword_sfx", "/audio/sword_sfx.wav", 1.0f, 1.0f, false));
         SoundRegistry.register(new Sound("sfx_level_up", "/audio/levelup.wav", 1.0f, 1.0f, false));
         SoundRegistry.register(new Sound("sfx_cursor", "/audio/cursor.wav", 1.0f, 1.0f, false));
+        SoundRegistry.register(new Sound("sfx_burning", "/audio/burning.wav", 1.0f, 1.0f, false));
     }
 }

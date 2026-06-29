@@ -33129,3 +33129,1241 @@ Jun 28, 2026 7:37:46 P.M. com.mjsamaha.game.GamePanel startGameThread
 INFO: Starting game thread...
 Jun 28, 2026 7:37:46 P.M. com.mjsamaha.game.Main main
 INFO: Game loop started.
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:12:53 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:12:54 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:12:55 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:12:55 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:12:59 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:12:59 P.M. com.mjsamaha.game.entity.Player pickupObject
+INFO: Picked up Health Potion, added to inventory. Inventory size: 4
+Jun 28, 2026 8:13:12 P.M. com.mjsamaha.game.managers.GameStateManager toCharacterState
+INFO: Transitioned to CHARACTER screen state
+Jun 28, 2026 8:13:14 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:17:42 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:17:43 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_BURNING, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:17:44 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:17:45 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:17:46 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:17:47 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:17:47 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:17:47 P.M. com.mjsamaha.game.entity.Player pickupObject
+INFO: Picked up Key, added to inventory. Inventory size: 4
+Jun 28, 2026 8:17:51 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:17:52 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:17:54 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_RECEIVE_DAMAGE
+Jun 28, 2026 8:17:55 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_RECEIVE_DAMAGE
+Jun 28, 2026 8:18:00 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:18:44 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_BURNING, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:18:45 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:18:48 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:19:16 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:19:17 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_BURNING, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:19:18 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:19:25 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_BURNING, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:19:26 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:19:29 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:19:31 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:19:33 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:19:34 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:19:35 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:26:41 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_BURNING, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:26:42 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:26:43 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:26:43 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:34:05 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_BURNING, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:34:06 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:34:07 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:34:07 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:34:10 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:34:12 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:13 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:14 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:15 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:16 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:17 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_RECEIVE_DAMAGE
+Jun 28, 2026 8:34:17 P.M. com.mjsamaha.game.entity.Player contactMonster
+INFO: Player took 2 damage, HP now 4
+Jun 28, 2026 8:34:17 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:34:17 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:34:18 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:34:18 P.M. com.mjsamaha.game.entity.Player checkLevelUp
+INFO: Player leveled up to level 2!
+Jun 28, 2026 8:34:18 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_LEVEL_UP
+Jun 28, 2026 8:34:18 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:34:19 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:34:24 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:24 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:25 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:26 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:27 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:27 P.M. com.mjsamaha.game.entity.Player checkLevelUp
+INFO: Player leveled up to level 3!
+Jun 28, 2026 8:34:27 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_LEVEL_UP
+Jun 28, 2026 8:34:27 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:34:28 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:34:33 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:34:33 P.M. com.mjsamaha.game.entity.Player pickupObject
+INFO: Picked up Blue Shield, added to inventory. Inventory size: 4
+Jun 28, 2026 8:34:34 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:34:34 P.M. com.mjsamaha.game.entity.Player pickupObject
+INFO: Picked up Wooden Shield, added to inventory. Inventory size: 5
+Jun 28, 2026 8:34:34 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:34:34 P.M. com.mjsamaha.game.entity.Player pickupObject
+INFO: Picked up Axe, added to inventory. Inventory size: 6
+Jun 28, 2026 8:34:35 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:34:36 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:34:37 P.M. com.mjsamaha.game.managers.GameStateManager toCharacterState
+INFO: Transitioned to CHARACTER screen state
+Jun 28, 2026 8:34:38 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:34:39 P.M. com.mjsamaha.game.managers.GameStateManager toCharacterState
+INFO: Transitioned to CHARACTER screen state
+Jun 28, 2026 8:34:40 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_CURSOR
+Jun 28, 2026 8:34:41 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:34:43 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:34:44 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:34:46 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:35:31 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:35:32 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_BURNING, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:35:33 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:35:33 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:35:33 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:35:33 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:35:33 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:35:33 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:35:33 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:35:34 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:35:35 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:35:37 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:35:38 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.Main main
+INFO: Game starting...
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.Main main
+INFO: Window initialized.
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: Initializing GamePanel...
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Initializing managers...
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: === Loading Texture Atlases ===
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.tile.TextureAtlas <init>
+INFO: Loaded atlas 'terrain' with 32 regions.
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.tile.TextureAtlas printDebugInfo
+INFO: 
+=== Atlas: terrain ===
+Image size: 128x128
+Tile size: 16x16
+Regions: 32
+Texture IDs: [grass01, water06, grass00, water05, water08, water07, water02, water01, water04, water03, water00, road11, road12, water13, water12, tree, water11, water10, road10, road02, road03, road00, road01, road06, road07, road04, road05, earth, road08, road09, water09, wall]
+========================
+
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.tile.AtlasManager loadAllAtlases
+INFO: All atlases loaded successfully.
+Jun 28, 2026 8:35:53 P.M. com.mjsamaha.game.tile.TileManager loadMap
+INFO: 
+=== Tile IDs used in /maps/worldV2.txt ===
+ID 10: ✅ mapped
+ID 11: ✅ mapped
+ID 12: ✅ mapped
+ID 13: ✅ mapped
+ID 14: ✅ mapped
+ID 15: ✅ mapped
+ID 16: ✅ mapped
+ID 17: ✅ mapped
+ID 18: ✅ mapped
+ID 19: ✅ mapped
+ID 20: ✅ mapped
+ID 21: ✅ mapped
+ID 22: ✅ mapped
+ID 23: ✅ mapped
+ID 24: ✅ mapped
+ID 25: ✅ mapped
+ID 26: ✅ mapped
+ID 27: ✅ mapped
+ID 28: ✅ mapped
+ID 29: ✅ mapped
+ID 30: ✅ mapped
+ID 31: ✅ mapped
+ID 32: ✅ mapped
+ID 33: ✅ mapped
+ID 34: ✅ mapped
+ID 35: ✅ mapped
+ID 36: ✅ mapped
+ID 37: ✅ mapped
+ID 38: ✅ mapped
+ID 39: ✅ mapped
+ID 40: ✅ mapped
+ID 41: ✅ mapped
+=====================================
+
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.ui.FontManager loadFonts
+INFO: ✅ Minecraft.ttf loaded successfully with all font sizes.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.ui.UserInterface <init>
+INFO: UserInterface initialized with modular renderers.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.entity.Player <init>
+INFO: Player initialized at x=1104, y=1008, HP=6
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.Renderer <init>
+INFO: Renderer initialized.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.GamePanel initializeManagers
+INFO: Managers initialized successfully.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Initializing audio subsystem...
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.audio.AudioInitializer initializeSounds
+INFO: Audio subsystem initialization complete.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.GamePanel <init>
+INFO: GamePanel initialization complete.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Setting up game assets...
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.entity.OldMan <init>
+INFO: Spawned OldMan NPC at x=0, y=0
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.managers.AssetManager setNPC
+INFO: NPCs set: OldMan at (21, 21)
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Spawning entities complete.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.audio.SoundEvent <clinit>
+INFO: All SoundEvent constants loaded: [MUSIC_BLUE_BOY, MUSIC_FIRST_SAMPLE, MUSIC_AMBIENT_LOOP, SFX_MENU_SELECT, SFX_CURSOR, SFX_COIN, SFX_POWERUP, SFX_UNLOCK, SFX_FANFARE, SFX_LEVEL_UP, SFX_BURNING, SFX_HIT_MONSTER, SFX_RECEIVE_DAMAGE, SFX_SWORD_SWING]
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_AMBIENT_LOOP
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.GamePanel setupGame
+INFO: Background music started.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.Main main
+INFO: Game setup complete.
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.GamePanel startGameThread
+INFO: Starting game thread...
+Jun 28, 2026 8:35:54 P.M. com.mjsamaha.game.Main main
+INFO: Game loop started.
+Jun 28, 2026 8:35:55 P.M. com.mjsamaha.game.GamePanel playMusic
+INFO: Playing music: MUSIC_BLUE_BOY
+Jun 28, 2026 8:35:55 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:35:59 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:01 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:02 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:04 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:05 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:08 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:08 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:08 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:08 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:09 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_BURNING
+Jun 28, 2026 8:36:09 P.M. com.mjsamaha.game.entity.Player checkLevelUp
+INFO: Player leveled up to level 2!
+Jun 28, 2026 8:36:09 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_LEVEL_UP
+Jun 28, 2026 8:36:09 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:10 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:16 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:17 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:18 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:19 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:19 P.M. com.mjsamaha.game.entity.Player checkLevelUp
+INFO: Player leveled up to level 3!
+Jun 28, 2026 8:36:19 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_LEVEL_UP
+Jun 28, 2026 8:36:19 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:21 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:23 P.M. com.mjsamaha.game.managers.GameStateManager toCharacterState
+INFO: Transitioned to CHARACTER screen state
+Jun 28, 2026 8:36:24 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:29 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:36:29 P.M. com.mjsamaha.game.entity.Player pickupObject
+INFO: Picked up Health Potion, added to inventory. Inventory size: 4
+Jun 28, 2026 8:36:30 P.M. com.mjsamaha.game.managers.GameStateManager toCharacterState
+INFO: Transitioned to CHARACTER screen state
+Jun 28, 2026 8:36:31 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_CURSOR
+Jun 28, 2026 8:36:31 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_CURSOR
+Jun 28, 2026 8:36:31 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_CURSOR
+Jun 28, 2026 8:36:32 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:32 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_POWERUP
+Jun 28, 2026 8:36:32 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_COIN
+Jun 28, 2026 8:36:32 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:35 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:35 P.M. com.mjsamaha.game.managers.EventHandler healingPool
+INFO: Player interacts with healing pool at (23, 12)
+Jun 28, 2026 8:36:35 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:35 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:36:35 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:36:35 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:36:35 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:36:35 P.M. com.mjsamaha.game.entity.GreenSlime <init>
+INFO: Spawned GreenSlime at x=0, y=0, HP=3
+Jun 28, 2026 8:36:36 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:39 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:39 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:39 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:40 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:40 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:41 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:41 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:41 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:44 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:44 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:44 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:44 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:45 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state
+Jun 28, 2026 8:36:46 P.M. com.mjsamaha.game.GamePanel playSE
+INFO: Playing sound effect: SFX_SWORD_SWING
+Jun 28, 2026 8:36:46 P.M. com.mjsamaha.game.managers.GameStateManager toDialogueState
+INFO: Transitioned to DIALOGUE state
+Jun 28, 2026 8:36:46 P.M. com.mjsamaha.game.managers.GameStateManager toPlayState
+INFO: Transitioned to PLAY state

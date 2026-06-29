@@ -15,6 +15,7 @@ import com.mjsamaha.game.entity.Player;
 import com.mjsamaha.game.entity.common.Entity;
 import com.mjsamaha.game.managers.AssetManager;
 import com.mjsamaha.game.managers.CollisionDetection;
+import com.mjsamaha.game.managers.EntityManager;
 import com.mjsamaha.game.managers.EventHandler;
 import com.mjsamaha.game.managers.GameStateManager;
 import com.mjsamaha.game.managers.GameUpdater;
@@ -54,6 +55,8 @@ public class GamePanel extends JPanel implements Runnable {
     public AssetManager aManager;
     public SoundManager soundManager;
     private Renderer renderer;
+    
+    public EntityManager entityManager;
     
     // UI
     public UserInterface ui;
@@ -98,6 +101,8 @@ public class GamePanel extends JPanel implements Runnable {
         ui = new UserInterface(this);
         player = new Player(this, keyH);
         renderer = new Renderer(this);
+        entityManager = new EntityManager();
+        entityManager.setPlayer(player);
 
         this.addKeyListener(keyH);
         this.addMouseListener(mouseH);

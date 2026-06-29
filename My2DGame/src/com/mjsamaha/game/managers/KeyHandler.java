@@ -12,6 +12,8 @@ public class KeyHandler implements KeyListener {
 	public boolean characterStatePressed;
 	public boolean debugTogglePressed = false;
 	public boolean refreshPressed = false;
+	
+	public boolean shotKeyPressed;
 
 	private final InputMapper inputMapper = new InputMapper();
 
@@ -26,6 +28,7 @@ public class KeyHandler implements KeyListener {
 		case MOVE_DOWN -> downPressed = true;
 		case MOVE_LEFT -> leftPressed = true;
 		case MOVE_RIGHT -> rightPressed = true;
+		case SHOOT -> shotKeyPressed = true;
 		case CONFIRM -> confirmPressed = true;
 		case CANCEL -> cancelPressed = true;
 		case CHARACTER_STATE -> characterStatePressed = true;
@@ -46,6 +49,8 @@ public class KeyHandler implements KeyListener {
 		case MOVE_DOWN -> downPressed = false;
 		case MOVE_LEFT -> leftPressed = false;
 		case MOVE_RIGHT -> rightPressed = false;
+		case SHOOT -> shotKeyPressed = false;
+		
 		case CONFIRM -> confirmPressed = false;
 		case CANCEL -> cancelPressed = false;
 		case CHARACTER_STATE -> characterStatePressed = false;

@@ -12,6 +12,8 @@ import javax.imageio.ImageIO;
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.audio.SoundEvent;
+import com.mjsamaha.game.entity.Player;
+import com.mjsamaha.game.entity.Projectile;
 import com.mjsamaha.game.util.UtilityTools;
 
 public class Entity implements Movable, Collidable, Drawable {
@@ -59,6 +61,8 @@ public class Entity implements Movable, Collidable, Drawable {
 
 	// Stats	
 	public int maxHealth;
+	public int maxMana;
+	public int mana;
 	public int health;
 	public int level;
 	public int strength;
@@ -71,10 +75,13 @@ public class Entity implements Movable, Collidable, Drawable {
 	public Entity currentWeapon;
 	public Entity currentShield;
 	
+	public Projectile projectile;
+	
 	public int attackValue;
 	public int defenseValue;
 	
 	public String description = "";
+	public int useCost; // Mana cost for using this entity (if applicable)
 
 	// Metadata
 	public BufferedImage image, image2, image3;
@@ -157,6 +164,36 @@ public class Entity implements Movable, Collidable, Drawable {
 	@Override
 	public int getSolidAreaDefaultY() {
 		return solidAreaDefaultY;
+	}
+	
+	public void takeDamage(Entity attacker, int attack) {
+
+	    if (invincible) {
+	        return;
+	    }
+
+	    int damage = attack - defense;
+	    if (damage < 0) {
+	        damage = 0;
+	    }
+
+	    health -= damage;
+
+	    invincible = true;
+	    hpBarOn = true;
+	    hpBarCounter = 0;
+
+	    damageReaction();
+
+	    if (health <= 0 && !dying) {
+
+	        dying = true;
+
+	        if (attacker instanceof Player player) {
+	            player.exp += exp;
+	            player.checkLevelUp();
+	        }
+	    }
 	}
 
 	/**

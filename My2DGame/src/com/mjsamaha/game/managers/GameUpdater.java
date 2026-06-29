@@ -1,5 +1,6 @@
 package com.mjsamaha.game.managers;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import com.mjsamaha.game.GamePanel;
@@ -64,6 +65,8 @@ public class GameUpdater {
         // Update monsters
         updateMonsters();
         
+        updateProjectiles();
+        
         // Check for world events
         gp.eHandler.checkEvent();
         
@@ -101,6 +104,19 @@ public class GameUpdater {
                 }
             }
         }
+    }
+    
+    private void updateProjectiles() {
+    	ArrayList<Entity> projectileList = gp.entityManager.getProjectiles();
+    	
+    	for (int i = projectileList.size() - 1; i >= 0; i--) {
+    		Entity p = projectileList.get(i);
+    		if (p.alive) {
+    			p.update();
+    		} else {
+				projectileList.remove(i);
+			}
+    	}
     }
     
     private void updatePauseState(KeyHandler keyH) {

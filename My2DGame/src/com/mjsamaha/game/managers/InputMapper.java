@@ -11,6 +11,7 @@ public class InputMapper {
         MOVE_DOWN,
         MOVE_LEFT,
         MOVE_RIGHT,
+        SHOOT,
         CONFIRM,
         CANCEL,
         CHARACTER_STATE,
@@ -37,6 +38,7 @@ public class InputMapper {
         
         keyMap.put(KeyEvent.VK_F3, Action.DEBUG);
         keyMap.put(KeyEvent.VK_R, Action.REFRESH);
+        keyMap.put(KeyEvent.VK_F, Action.SHOOT);
     }
 
         

@@ -16,6 +16,7 @@ public class EntityManager {
 	public Entity[] npcs;
 	public Entity[] monsters;
 	private ArrayList<Entity> entityList;
+	private ArrayList<Entity> projectileList = new ArrayList<>();
 	
 	// Reference to player
 	private Player player;
@@ -51,6 +52,14 @@ public class EntityManager {
 				monsters[i].update();
 			}
 		}
+	}
+	
+	public void addProjectile(Entity projectile) {
+		projectileList.add(projectile);
+	}
+	
+	public ArrayList<Entity> getProjectiles() {
+		return projectileList;
 	}
 	
 	/**
