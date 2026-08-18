@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.object.HeartObject;
+import com.mjsamaha.game.object.ManaObject;
 import com.mjsamaha.game.ui.FontManager;
 import com.mjsamaha.game.ui.UIState;
 
@@ -16,6 +17,7 @@ public class HUD {
     private final FontManager fm = FontManager.getInstance();
 
     private final HeartObject hearts;
+    private final ManaObject manas;
 
     public HUD(GamePanel gp, UIState state) {
         this.gp = gp;
@@ -23,6 +25,7 @@ public class HUD {
 
         // Load hearts once
         hearts = new HeartObject(gp);
+        manas = new ManaObject(gp);
     }
 
     public void draw(Graphics2D g2) {
@@ -56,6 +59,22 @@ public class HUD {
         int remaining = maxHearts - fullHearts - halfHearts;
         for (int i = 0; i < remaining; i++) {
             g2.drawImage(hearts.image3, x, y, gp.tileSize, gp.tileSize, null);
+            x += gp.tileSize;
+        }
+        
+        // draw mana crystals (positioned directly below the hearts row)
+        x = 10;
+        y = 10 + gp.tileSize;
+
+        // draw full mana crystals for current mana
+        for (int i = 0; i < gp.player.mana; i++) {
+            g2.drawImage(manas.image, x, y, gp.tileSize, gp.tileSize, null);
+            x += gp.tileSize;
+        }
+
+        // draw blank mana crystals for the remaining slots up to maxMana
+        for (int i = gp.player.mana; i < gp.player.maxMana; i++) {
+            g2.drawImage(manas.image2, x, y, gp.tileSize, gp.tileSize, null);
             x += gp.tileSize;
         }
     }

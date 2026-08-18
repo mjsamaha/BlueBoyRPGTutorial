@@ -2,12 +2,11 @@ package com.mjsamaha.game.entity;
 
 import java.util.Random;
 import java.util.logging.Logger;
-import java.util.logging.Level;
-
 
 import com.mjsamaha.game.Constants;
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.common.Entity;
+import com.mjsamaha.game.object.RockObject;
 
 public class GreenSlime extends Entity {
 	
@@ -27,6 +26,7 @@ public class GreenSlime extends Entity {
 		this.attack = 3;
 		this.defense = 0;
 		this.exp = 2;
+		projectile = new RockObject(gp);
 		
 		// Set collision box using constants
 		solidArea.x = Constants.Monster.SLIME_COLLISION_X;
@@ -80,7 +80,16 @@ public class GreenSlime extends Entity {
 			}
 			
 			actionLockCounter = 0;
+			
 		}
+		
+		int i = random.nextInt(100) + 1;
+		if (i > 99 && projectile.alive == false && shotAvailableCounter >= 30) {
+			projectile.set(worldX, worldY, direction, true, this);
+			gp.entityManager.addProjectile(projectile);
+			shotAvailableCounter = 0;
+		}
+
 	}
 	
 	public void damageReaction() {

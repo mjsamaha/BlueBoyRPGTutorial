@@ -63,6 +63,10 @@ public class CharacterScreen {
         g2.drawString("Health: " + gp.player.health + "/" + gp.player.maxHealth, textX, textY);
         textY += lineHeight;
 
+        // Mana
+        g2.drawString("Mana: " + gp.player.mana + "/" + gp.player.maxMana, textX, textY);
+        textY += lineHeight;
+
         // Strength
         g2.drawString("Strength: " + gp.player.strength, textX, textY);
         textY += lineHeight;

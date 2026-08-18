@@ -25,6 +25,7 @@ public class Entity implements Movable, Collidable, Drawable {
 	public int speed;
 	public String direction = "down";
 	public boolean collisionOn = false;
+	public int shotAvailableCounter = 0;
 
 	// Sprites
 	public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
@@ -265,6 +266,10 @@ public class Entity implements Movable, Collidable, Drawable {
 
 		        gp.player.invincible = true;
 		    }
+		}
+		
+		if (shotAvailableCounter < 30) {
+			shotAvailableCounter++;
 		}
 
 		// Apply movement

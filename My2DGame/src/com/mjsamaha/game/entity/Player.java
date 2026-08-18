@@ -83,6 +83,9 @@ public class Player extends Entity {
 
 		maxHealth = Constants.Player.MAX_HEALTH;
 		health = maxHealth;
+		
+		maxMana = 4;
+		mana = maxMana;
 
 		level = 1;
 		strength = 1;
