@@ -2,6 +2,7 @@ package com.mjsamaha.game.object;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.Projectile;
+import com.mjsamaha.game.entity.common.Entity;
 
 public class FireballObject extends Projectile {
 	
@@ -38,6 +39,20 @@ public class FireballObject extends Projectile {
 		right2 = setup("/projectile/fireball_right_2", gp.tileSize, gp.tileSize);
 	}
 	
+	public boolean haveResource(Entity user) {
+		
+		boolean haveResource = false;
+		
+		if (user.mana >= useCost) {
+			haveResource = true;
+		} else {
+			haveResource = false;
+		}
+		
+		return haveResource;
+	}
 	
-
+	public void subtractResource(Entity user) {
+		user.mana -= useCost;
+	}
 }

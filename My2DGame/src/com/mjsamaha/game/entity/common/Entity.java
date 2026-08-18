@@ -75,6 +75,11 @@ public class Entity implements Movable, Collidable, Drawable {
 	public int coins;
 	public Entity currentWeapon;
 	public Entity currentShield;
+	public int ammo;
+	
+	public int value;
+	
+	public final int type_pickup_only = 7;
 	
 	public Projectile projectile;
 	

@@ -2,6 +2,7 @@ package com.mjsamaha.game.object;
 
 import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.Projectile;
+import com.mjsamaha.game.entity.common.Entity;
 
 public class RockObject extends Projectile {
 	
@@ -36,6 +37,23 @@ public class RockObject extends Projectile {
 		left2 = setup("/projectile/rock_down_1", gp.tileSize, gp.tileSize);
 		right1 = setup("/projectile/rock_down_1", gp.tileSize, gp.tileSize);
 		right2 = setup("/projectile/rock_down_1", gp.tileSize, gp.tileSize);
+	}
+	
+public boolean haveResource(Entity user) {
+		
+		boolean haveResource = false;
+		
+		if (user.ammo >= useCost) {
+			haveResource = true;
+		} else {
+			haveResource = false;
+		}
+		
+		return haveResource;
+	}
+	
+	public void subtractResource(Entity user) {
+		user.ammo -= useCost;
 	}
 	
 	

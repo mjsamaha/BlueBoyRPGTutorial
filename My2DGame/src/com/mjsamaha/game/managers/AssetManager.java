@@ -6,6 +6,7 @@ import com.mjsamaha.game.GamePanel;
 import com.mjsamaha.game.entity.GreenSlime;
 import com.mjsamaha.game.entity.OldMan;
 import com.mjsamaha.game.object.AxeObject;
+import com.mjsamaha.game.object.CoinObject;
 import com.mjsamaha.game.object.KeyObject;
 import com.mjsamaha.game.object.PotionObject;
 import com.mjsamaha.game.object.ShieldObjectBlue;
@@ -26,12 +27,12 @@ public class AssetManager {
 	public void setObject() {
 
 		int i = 0;
-		gp.obj[i] = new KeyObject(gp);
+		gp.obj[i] = new CoinObject(gp);
 		gp.obj[i].worldX = gp.tileSize * 25;
 		gp.obj[i].worldY = gp.tileSize * 23;
 		i++;
 		
-		gp.obj[i] = new KeyObject(gp);
+		gp.obj[i] = new CoinObject(gp);
 		gp.obj[i].worldX = gp.tileSize * 21;
 		gp.obj[i].worldY = gp.tileSize * 19;
 		i++;

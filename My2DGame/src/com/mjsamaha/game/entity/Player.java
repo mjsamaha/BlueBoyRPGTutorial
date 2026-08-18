@@ -16,6 +16,7 @@ import com.mjsamaha.game.managers.KeyHandler;
 import com.mjsamaha.game.object.FireballObject;
 import com.mjsamaha.game.object.HeartObject;
 import com.mjsamaha.game.object.KeyObject;
+import com.mjsamaha.game.object.RockObject;
 import com.mjsamaha.game.object.ShieldObjectWood;
 import com.mjsamaha.game.object.SwordObjectNormal;
 import com.mjsamaha.game.object.common.Collectible;
@@ -93,12 +94,16 @@ public class Player extends Entity {
 		exp = 0;
 		nextLevelExp = 5;
 		coins = 0;
+		
+		ammo = 10; // Starting ammo for projectiles
+		
 		currentWeapon = new SwordObjectNormal(gp);
 		currentShield = new ShieldObjectWood(gp);
 		attack = getAttack();
 		defense = getDefense();
 		
 		projectile = new FireballObject(gp); 
+		//projectile = new RockObject(gp); // Use RockObject as the default projectile
 
 	}
 
@@ -218,10 +223,15 @@ public class Player extends Entity {
 	
 	private void handleAttack() {
 		if (gp.keyH.shotKeyPressed == true && projectile.alive == false) {
-			projectile.set(worldX, worldY, direction, true, this);
-			gp.entityManager.addProjectile(projectile);
-			gp.playSE(SoundEvent.SFX_BURNING);
-			
+			if (projectile.haveResource(this)) {
+				projectile.subtractResource(this);
+				projectile.set(worldX, worldY, direction, true, this);
+				gp.entityManager.addProjectile(projectile);
+				gp.playSE(SoundEvent.SFX_BURNING);
+			} else {
+				gp.ui.addMessage("Not enough mana!");
+			}
+			gp.keyH.shotKeyPressed = false; // consume the key press so it fires once per press
 		}
 	}
 
@@ -510,6 +520,9 @@ public class Player extends Entity {
 		// First, handle Collectible and Usable effects
 		if (obj instanceof Collectible) {
 			((Collectible) obj).collect(this);
+			// Collectibles (e.g. coins) are auto-picked-up and never enter the inventory
+			gp.obj[i] = null;
+			return;
 		} else if (obj instanceof Usable && gp.keyH.confirmPressed) {
 			((Usable) obj).use(this);
 			// Remove consumable from world immediately
